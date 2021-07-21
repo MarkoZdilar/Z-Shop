@@ -97,7 +97,7 @@ using ZShop.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 28 "D:\CSharpSeminarski\ZShop\ZShop\Client\Shared\NavMenu.razor"
+#line 30 "D:\CSharpSeminarski\ZShop\ZShop\Client\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
