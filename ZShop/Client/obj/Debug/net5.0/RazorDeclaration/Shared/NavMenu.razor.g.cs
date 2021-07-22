@@ -89,6 +89,20 @@ using ZShop.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 12 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using ZShop.Client.Services.ProductService;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 13 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using ZShop.Client.Services.CategoryService;
+
+#line default
+#line hidden
+#nullable disable
     public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -97,7 +111,7 @@ using ZShop.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 30 "D:\CSharpSeminarski\ZShop\ZShop\Client\Shared\NavMenu.razor"
+#line 26 "D:\CSharpSeminarski\ZShop\ZShop\Client\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
@@ -108,9 +122,15 @@ using ZShop.Shared;
         collapseNavMenu = !collapseNavMenu;
     }
 
+    protected override void OnInitialized()
+    {
+        CategoryService.LoadCategories();
+    }
+
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ICategoryService CategoryService { get; set; }
     }
 }
 #pragma warning restore 1591

@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using ZShop.Client.Services.CategoryService;
+using ZShop.Client.Services.ProductService;
 
 namespace ZShop.Client
 {
@@ -18,6 +20,9 @@ namespace ZShop.Client
             builder.RootComponents.Add<App>("#app");
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            builder.Services.AddScoped<IProductService, ProductService>();
+            builder.Services.AddScoped<ICategoryService, CategoryService>();
+
 
             await builder.Build().RunAsync();
         }

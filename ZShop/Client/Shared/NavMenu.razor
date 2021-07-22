@@ -1,21 +1,17 @@
-﻿
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: black;">
+﻿@inject ICategoryService CategoryService
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" style="background-color: black;">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><h3>Z-Shop</h3></a>
+        <a class="navbar-brand" href="#"><h2>Z-Shop</h2></a>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="">Home</a>
-                <a class="nav-link" href="counter">Counter</a>
-                <a class="nav-link" href="fetchdata">Fetch Data</a>
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                </a>
-                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                <a class="nav-link" id="navigation-link" aria-current="page" href="">Home</a>
+                <a class="nav-link navigation" id="navigation-link" href="counter">Counter</a>
+                <a class="nav-link navigation" id="navigation-link" href="fetchdata">Fetch Data</a>
+                @foreach (var category in CategoryService.Categories)
+                {
+                    <a class="nav-link navigation" id="navigation-link" href="@category.Url">@category.Name</a>
+                }
             </div>
         </div>
         
@@ -35,5 +31,10 @@
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+    }
+
+    protected override void OnInitialized()
+    {
+        CategoryService.LoadCategories();
     }
 }

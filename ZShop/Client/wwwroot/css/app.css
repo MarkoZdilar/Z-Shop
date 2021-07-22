@@ -2,6 +2,7 @@
 
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f2f2f2;
 }
 
 a, .btn-link {
@@ -66,24 +67,133 @@ a, .btn-link {
     font-size: 17px;
 }
 
-    /* Change the color of links on hover */
-    .topnav a:hover {
-        background-color: #ddd;
-        color: black;
-    }
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
 
-    /* Add an active class to highlight the current page */
-    .topnav a.active {
-        background-color: #04AA6D;
-        color: white;
-    }
+/* Add an active class to highlight the current page */
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
 
 /* Hide the link that should open and close the topnav on small screens */
 .topnav .icon {
     display: none;
 }
 
-.navbar-nav{
+.navbar-nav {
     padding-left: 5%;
 }
 
+.navbar-brand > h2 {
+    -webkit-text-stroke: 0.1px black;
+    color: #28A745;
+    font-family: 'Bell MT';
+    padding-top: 6px;
+}
+
+.left-div {
+    width: 15%;
+    min-height: 100%;
+    float: left;
+    text-align: center;
+}
+
+.center-div {
+    width: 70%;
+    height: 100%;
+    float: left;
+    background-color: white;
+    padding-top: 65px;
+    box-shadow: 3px 10px 8px #888888;
+}
+
+.right-div {
+    width: 15%;
+    height: 100%;
+    float: left;
+    text-align: center;
+}
+
+.price {
+    color: green;
+}
+
+.original-price {
+    text-decoration: line-through;
+}
+
+.media-img-wrapper {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+}
+
+.media-img {
+    max-height: 200px;
+    max-width: 200px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    transition: transform .2s;
+}
+
+.media-img-big {
+    max-height: 500px;
+    max-width: 500px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.media-img-big-wrapper {
+    width: 500px;
+    height: 500px;
+    text-align: center;
+}
+.media-img:hover {
+    transform: scale(1.1);
+}
+
+.mb-0 {
+    color: #28A745;
+    font-weight: bold;
+    padding-top: 1%;
+    padding-bottom: 2%;
+}
+
+.mb-0:hover {
+    text-decoration: underline;
+    text-decoration-color: #28A745;
+}
+
+.list-unstyled {
+    padding-top: 1%;
+}
+
+@media (max-width: 1023.98px) {
+    .media {
+        flex-direction: column;
+    }
+
+    .media-img-big-wrapper, .media-img-wrapper {
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+
+    .media-img-big {
+        max-width: 300px;
+    }
+}
+
+#navigation-link {
+    color: #cccccc;
+    font: 32px;
+    padding-right: 20px;
+}
+
+#navigation-link:hover {
+    color: #28A745;
+}

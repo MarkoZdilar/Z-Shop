@@ -636,3 +636,5 @@ D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\ref\ZShop.Client.dll
 D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\ZShop.Client.pdb
 D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\RazorDeclaration\Shared\ProductList.razor.g.cs
 D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\Razor\Shared\ProductList.razor.g.cs
+D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\RazorDeclaration\Pages\ProductDetails.razor.g.cs
+D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\Razor\Pages\ProductDetails.razor.g.cs

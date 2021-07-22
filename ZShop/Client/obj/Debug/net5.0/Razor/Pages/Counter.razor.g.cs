@@ -86,6 +86,20 @@ using ZShop.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 12 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using ZShop.Client.Services.ProductService;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 13 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using ZShop.Client.Services.CategoryService;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/counter")]
     public partial class Counter : Microsoft.AspNetCore.Components.ComponentBase
     {
