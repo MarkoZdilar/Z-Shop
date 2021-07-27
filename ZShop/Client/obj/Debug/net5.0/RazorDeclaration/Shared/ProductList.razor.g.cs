@@ -103,7 +103,7 @@ using ZShop.Client.Services.CategoryService;
 #line default
 #line hidden
 #nullable disable
-    public partial class ProductList : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class ProductList : Microsoft.AspNetCore.Components.ComponentBase, IDisposable
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -111,14 +111,20 @@ using ZShop.Client.Services.CategoryService;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 30 "D:\CSharpSeminarski\ZShop\ZShop\Client\Shared\ProductList.razor"
+#line 31 "D:\CSharpSeminarski\ZShop\ZShop\Client\Shared\ProductList.razor"
         
-    [Parameter]
-    public int? CategoryId { get; set; } = null;
+    //[Parameter]
+    //public int? CategoryId { get; set; } = null;
 
     protected override void OnInitialized()
     {
-        ProductService.LoadProducts();
+        //await ProductService.LoadProducts();
+        ProductService.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        ProductService.OnChange -= StateHasChanged;
     }
 
 #line default

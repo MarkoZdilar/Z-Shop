@@ -113,15 +113,17 @@ using ZShop.Client.Services.CategoryService;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 22 "D:\CSharpSeminarski\ZShop\ZShop\Client\Pages\Index.razor"
+#line 23 "D:\CSharpSeminarski\ZShop\ZShop\Client\Pages\Index.razor"
  
     [Parameter]
     public string CategoryUrl { get; set; }
 
     private Category category = null;
 
-    protected override void OnParametersSet()
+    protected override async Task OnParametersSetAsync()
     {
+        await ProductService.LoadProducts(CategoryUrl);
+
         if (CategoryUrl != null)
         {
             category = CategoryService.Categories.FirstOrDefault(c => c.Url.ToLower().Equals(CategoryUrl.ToLower()));
@@ -135,6 +137,7 @@ using ZShop.Client.Services.CategoryService;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IProductService ProductService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private ICategoryService CategoryService { get; set; }
     }
 }

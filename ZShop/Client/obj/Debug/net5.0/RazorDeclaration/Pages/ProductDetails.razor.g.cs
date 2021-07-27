@@ -103,7 +103,7 @@ using ZShop.Client.Services.CategoryService;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/product/{id}")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/product/{id:int}")]
     public partial class ProductDetails : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -113,22 +113,25 @@ using ZShop.Client.Services.CategoryService;
         #pragma warning restore 1998
 #nullable restore
 #line 23 "D:\CSharpSeminarski\ZShop\ZShop\Client\Pages\ProductDetails.razor"
+       
+    private Product product = new Product();
+
+    [Parameter]
+    public int Id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 34 "D:\CSharpSeminarski\ZShop\ZShop\Client\Pages\ProductDetails.razor"
            
-        private Product product = null;
 
-        [Parameter]
-        public string Id { get; set; }
-
-        protected override void OnInitialized()
-        {
-            if (ProductService.Products == null || ProductService.Products.Count == 0)
-            {
-                ProductService.LoadProducts();
-            }
-
-            product = ProductService.Products.FirstOrDefault(p => p.Id == Int32.Parse(Id));
-        }
-    
+         product = await ProductService.GetProduct(Id);
+    }
 
 #line default
 #line hidden
