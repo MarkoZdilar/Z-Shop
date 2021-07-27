@@ -1,3 +1,39 @@
 ﻿@page "/"
+@page "/{categoryurl}"
+@inject ICategoryService CategoryService;
 
-<ProductList/>
+
+@if (category != null)
+{
+    <br />
+    <br />
+    <h2 style="text-align: center; color: #28A745; font-weight: bold; ">@category.Name Games</h2>
+    <ProductList CategoryId="@category.Id" />
+}
+else
+{
+    <br />
+    <br />
+    <h2 style="text-align: center; color: #28A745; font-weight: bold; ">Welcome to Z-Shop!</h2>
+    <ProductList />
+}
+
+@code
+{
+    [Parameter]
+    public string CategoryUrl { get; set; }
+
+    private Category category = null;
+
+    protected override void OnParametersSet()
+    {
+        if (CategoryUrl != null)
+        {
+            category = CategoryService.Categories.FirstOrDefault(c => c.Url.ToLower().Equals(CategoryUrl.ToLower()));
+        }
+        else
+        {
+            category = null;
+        }
+    }
+}

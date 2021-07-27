@@ -104,6 +104,7 @@ using ZShop.Client.Services.CategoryService;
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/{categoryurl}")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -111,6 +112,30 @@ using ZShop.Client.Services.CategoryService;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 22 "D:\CSharpSeminarski\ZShop\ZShop\Client\Pages\Index.razor"
+ 
+    [Parameter]
+    public string CategoryUrl { get; set; }
+
+    private Category category = null;
+
+    protected override void OnParametersSet()
+    {
+        if (CategoryUrl != null)
+        {
+            category = CategoryService.Categories.FirstOrDefault(c => c.Url.ToLower().Equals(CategoryUrl.ToLower()));
+        }
+        else
+        {
+            category = null;
+        }
+    }
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ICategoryService CategoryService { get; set; }
     }
 }
 #pragma warning restore 1591

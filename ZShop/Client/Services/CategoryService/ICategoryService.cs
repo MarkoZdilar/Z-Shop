@@ -10,7 +10,7 @@ namespace ZShop.Client.Services.CategoryService
     {
         List<Category> Categories { get; set; }
 
-        void LoadCategories();
+        Task LoadCategories();
 
     }
 }

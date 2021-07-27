@@ -6,8 +6,6 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-link" id="navigation-link" aria-current="page" href="">Home</a>
-                <a class="nav-link navigation" id="navigation-link" href="counter">Counter</a>
-                <a class="nav-link navigation" id="navigation-link" href="fetchdata">Fetch Data</a>
                 @foreach (var category in CategoryService.Categories)
                 {
                     <a class="nav-link navigation" id="navigation-link" href="@category.Url">@category.Name</a>
@@ -33,8 +31,8 @@
         collapseNavMenu = !collapseNavMenu;
     }
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        CategoryService.LoadCategories();
+        await CategoryService.LoadCategories();
     }
 }

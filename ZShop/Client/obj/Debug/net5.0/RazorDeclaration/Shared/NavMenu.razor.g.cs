@@ -111,7 +111,7 @@ using ZShop.Client.Services.CategoryService;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 26 "D:\CSharpSeminarski\ZShop\ZShop\Client\Shared\NavMenu.razor"
+#line 24 "D:\CSharpSeminarski\ZShop\ZShop\Client\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 
@@ -122,9 +122,9 @@ using ZShop.Client.Services.CategoryService;
         collapseNavMenu = !collapseNavMenu;
     }
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        CategoryService.LoadCategories();
+        await CategoryService.LoadCategories();
     }
 
 #line default

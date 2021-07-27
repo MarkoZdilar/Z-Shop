@@ -89,7 +89,7 @@ a, .btn-link {
 }
 
 .navbar-brand > h2 {
-    -webkit-text-stroke: 0.1px black;
+    -webkit-text-stroke: 0.5px #808080;
     color: #28A745;
     font-family: 'Bell MT';
     padding-top: 6px;
@@ -107,7 +107,7 @@ a, .btn-link {
     height: 100%;
     float: left;
     background-color: white;
-    padding-top: 65px;
+    padding-top: 85px;
     box-shadow: 3px 10px 8px #888888;
 }
 
@@ -144,12 +144,11 @@ a, .btn-link {
     max-height: 500px;
     max-width: 500px;
     border-radius: 6px;
-    margin-bottom: 10px;
 }
 
 .media-img-big-wrapper {
-    width: 500px;
-    height: 500px;
+    width: 350px;
+    height: 400px;
     text-align: center;
 }
 .media-img:hover {
@@ -158,7 +157,6 @@ a, .btn-link {
 
 .mb-0 {
     color: #28A745;
-    font-weight: bold;
     padding-top: 1%;
     padding-bottom: 2%;
 }
@@ -191,9 +189,17 @@ a, .btn-link {
 #navigation-link {
     color: #cccccc;
     font: 32px;
-    padding-right: 20px;
 }
 
 #navigation-link:hover {
     color: #28A745;
+}
+
+#navigation-link:active {
+    color: #19672b;
+}
+
+.media.media-details {
+    padding-top: 8%;
+    padding-bottom: 6%;
 }

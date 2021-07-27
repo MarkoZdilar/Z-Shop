@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
+using ZShop.Server.Services.CategoryService;
 
 namespace ZShop.Server
 {
@@ -25,6 +26,7 @@ namespace ZShop.Server
 
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddScoped<ICategoryService, CategoryService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
