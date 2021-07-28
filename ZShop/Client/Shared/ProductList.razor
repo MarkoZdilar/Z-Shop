@@ -14,10 +14,18 @@
                 <a href="/product/@product.Id">
                     <h4 class="mb-0">@product.Title</h4>
                 </a>
-                <p>@product.Description</p>
-                @if(product.OriginalPrice > product.Price)
+                @if (product.Description.Length < 270)
                 {
-                    <h6 class="text-muted original-price">@product.OriginalPrice €</h6> 
+                    <p>@product.Description</p>
+                }
+                else
+                {
+                    <p>@product.Description.Substring(0, 270)...</p>
+                }
+
+                @if (product.OriginalPrice > product.Price)
+                {
+                    <h6 class="text-muted original-price">@product.OriginalPrice €</h6>
                 }
                 <h5 class="price">
                     @product.Price €

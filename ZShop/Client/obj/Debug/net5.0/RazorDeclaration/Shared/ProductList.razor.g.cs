@@ -111,7 +111,7 @@ using ZShop.Client.Services.CategoryService;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 31 "D:\CSharpSeminarski\ZShop\ZShop\Client\Shared\ProductList.razor"
+#line 39 "D:\CSharpSeminarski\ZShop\ZShop\Client\Shared\ProductList.razor"
         
     //[Parameter]
     //public int? CategoryId { get; set; } = null;

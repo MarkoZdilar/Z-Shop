@@ -112,7 +112,7 @@ using ZShop.Client.Services.CategoryService;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 23 "D:\CSharpSeminarski\ZShop\ZShop\Client\Pages\ProductDetails.razor"
+#line 34 "D:\CSharpSeminarski\ZShop\ZShop\Client\Pages\ProductDetails.razor"
        
     private Product product = new Product();
 
@@ -127,7 +127,7 @@ using ZShop.Client.Services.CategoryService;
 #line hidden
 #nullable disable
 #nullable restore
-#line 34 "D:\CSharpSeminarski\ZShop\ZShop\Client\Pages\ProductDetails.razor"
+#line 45 "D:\CSharpSeminarski\ZShop\ZShop\Client\Pages\ProductDetails.razor"
            
 
          product = await ProductService.GetProduct(Id);

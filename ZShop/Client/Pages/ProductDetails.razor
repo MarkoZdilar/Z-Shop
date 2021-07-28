@@ -9,6 +9,17 @@
     <div class="media-body" style="padding-right:5%;">
         <h2 class="mb-0">@product.Title</h2>
         <p>@product.Description</p>
+        @if (product.Platforms != null && product.Platforms.Count > 0)
+        {
+            <div class="form-group" style="width: 20%; padding-bottom: 2.5%;">
+                <select class="form-control">
+                    @foreach (var platform in product.Platforms)
+                    {
+                        <option>@platform.Name</option>
+                    }
+                </select>
+            </div>
+        }
         @if (product.OriginalPrice > product.Price)
         {
             <h6 class="text-muted original-price">@product.OriginalPrice €</h6>

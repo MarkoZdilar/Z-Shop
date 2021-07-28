@@ -3,273 +3,23 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ZShop.Server.Data;
 
 namespace ZShop.Server.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20210728194435_ProductDateAllowNullable")]
+    partial class ProductDateAllowNullable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.8")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("PlatformProduct", b =>
-                {
-                    b.Property<int>("PlatformsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("PlatformsId", "ProductsId");
-
-                    b.HasIndex("ProductsId");
-
-                    b.ToTable("PlatformProduct");
-
-                    b.HasData(
-                        new
-                        {
-                            PlatformsId = 1,
-                            ProductsId = 1
-                        },
-                        new
-                        {
-                            PlatformsId = 4,
-                            ProductsId = 1
-                        },
-                        new
-                        {
-                            PlatformsId = 5,
-                            ProductsId = 1
-                        },
-                        new
-                        {
-                            PlatformsId = 4,
-                            ProductsId = 3
-                        },
-                        new
-                        {
-                            PlatformsId = 3,
-                            ProductsId = 4
-                        },
-                        new
-                        {
-                            PlatformsId = 4,
-                            ProductsId = 4
-                        },
-                        new
-                        {
-                            PlatformsId = 1,
-                            ProductsId = 5
-                        },
-                        new
-                        {
-                            PlatformsId = 4,
-                            ProductsId = 5
-                        },
-                        new
-                        {
-                            PlatformsId = 5,
-                            ProductsId = 5
-                        },
-                        new
-                        {
-                            PlatformsId = 4,
-                            ProductsId = 6
-                        },
-                        new
-                        {
-                            PlatformsId = 4,
-                            ProductsId = 7
-                        },
-                        new
-                        {
-                            PlatformsId = 5,
-                            ProductsId = 8
-                        },
-                        new
-                        {
-                            PlatformsId = 4,
-                            ProductsId = 8
-                        },
-                        new
-                        {
-                            PlatformsId = 4,
-                            ProductsId = 9
-                        },
-                        new
-                        {
-                            PlatformsId = 5,
-                            ProductsId = 10
-                        },
-                        new
-                        {
-                            PlatformsId = 4,
-                            ProductsId = 10
-                        },
-                        new
-                        {
-                            PlatformsId = 8,
-                            ProductsId = 11
-                        },
-                        new
-                        {
-                            PlatformsId = 4,
-                            ProductsId = 11
-                        },
-                        new
-                        {
-                            PlatformsId = 4,
-                            ProductsId = 13
-                        },
-                        new
-                        {
-                            PlatformsId = 1,
-                            ProductsId = 14
-                        },
-                        new
-                        {
-                            PlatformsId = 2,
-                            ProductsId = 14
-                        },
-                        new
-                        {
-                            PlatformsId = 4,
-                            ProductsId = 14
-                        },
-                        new
-                        {
-                            PlatformsId = 5,
-                            ProductsId = 14
-                        },
-                        new
-                        {
-                            PlatformsId = 6,
-                            ProductsId = 14
-                        },
-                        new
-                        {
-                            PlatformsId = 8,
-                            ProductsId = 15
-                        },
-                        new
-                        {
-                            PlatformsId = 3,
-                            ProductsId = 15
-                        },
-                        new
-                        {
-                            PlatformsId = 4,
-                            ProductsId = 15
-                        },
-                        new
-                        {
-                            PlatformsId = 1,
-                            ProductsId = 16
-                        },
-                        new
-                        {
-                            PlatformsId = 4,
-                            ProductsId = 16
-                        },
-                        new
-                        {
-                            PlatformsId = 5,
-                            ProductsId = 16
-                        },
-                        new
-                        {
-                            PlatformsId = 1,
-                            ProductsId = 22
-                        },
-                        new
-                        {
-                            PlatformsId = 2,
-                            ProductsId = 22
-                        },
-                        new
-                        {
-                            PlatformsId = 4,
-                            ProductsId = 22
-                        },
-                        new
-                        {
-                            PlatformsId = 5,
-                            ProductsId = 22
-                        },
-                        new
-                        {
-                            PlatformsId = 6,
-                            ProductsId = 22
-                        },
-                        new
-                        {
-                            PlatformsId = 3,
-                            ProductsId = 23
-                        },
-                        new
-                        {
-                            PlatformsId = 4,
-                            ProductsId = 23
-                        },
-                        new
-                        {
-                            PlatformsId = 7,
-                            ProductsId = 23
-                        },
-                        new
-                        {
-                            PlatformsId = 8,
-                            ProductsId = 23
-                        },
-                        new
-                        {
-                            PlatformsId = 1,
-                            ProductsId = 24
-                        },
-                        new
-                        {
-                            PlatformsId = 2,
-                            ProductsId = 24
-                        },
-                        new
-                        {
-                            PlatformsId = 3,
-                            ProductsId = 24
-                        },
-                        new
-                        {
-                            PlatformsId = 4,
-                            ProductsId = 24
-                        },
-                        new
-                        {
-                            PlatformsId = 5,
-                            ProductsId = 24
-                        },
-                        new
-                        {
-                            PlatformsId = 6,
-                            ProductsId = 24
-                        },
-                        new
-                        {
-                            PlatformsId = 7,
-                            ProductsId = 24
-                        },
-                        new
-                        {
-                            PlatformsId = 8,
-                            ProductsId = 24
-                        });
-                });
 
             modelBuilder.Entity("ZShop.Shared.Category", b =>
                 {
@@ -330,63 +80,6 @@ namespace ZShop.Server.Migrations
                             Id = 7,
                             Name = "Platform",
                             Url = "platform"
-                        });
-                });
-
-            modelBuilder.Entity("ZShop.Shared.Platform", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Platforms");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Play Station 5"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Play Station 4"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Play Station 3"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "PC"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "Xbox Series X"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Name = "Xbox One"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Name = "Xbox 360"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Name = "Nintendo Wii"
                         });
                 });
 
@@ -629,21 +322,6 @@ namespace ZShop.Server.Migrations
                             Price = 27.49m,
                             Title = "A Hat in Time"
                         });
-                });
-
-            modelBuilder.Entity("PlatformProduct", b =>
-                {
-                    b.HasOne("ZShop.Shared.Platform", null)
-                        .WithMany()
-                        .HasForeignKey("PlatformsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ZShop.Shared.Product", null)
-                        .WithMany()
-                        .HasForeignKey("ProductsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("ZShop.Shared.Product", b =>
