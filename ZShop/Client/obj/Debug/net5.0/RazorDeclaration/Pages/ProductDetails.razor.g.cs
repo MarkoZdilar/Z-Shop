@@ -112,25 +112,27 @@ using ZShop.Client.Services.CategoryService;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 34 "D:\CSharpSeminarski\ZShop\ZShop\Client\Pages\ProductDetails.razor"
+#line 37 "D:\CSharpSeminarski\ZShop\ZShop\Client\Pages\ProductDetails.razor"
        
     private Product product = new Product();
+    private int currentPlatformId = 1;
 
     [Parameter]
     public int Id { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        
+        product = await ProductService.GetProduct(Id);
+        if(product.Variants.Count > 0)
+        {
+            currentPlatformId = product.Variants[0].PlatformId; //If there is any platform for selected product, take first as current
+        }
+    }
 
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 45 "D:\CSharpSeminarski\ZShop\ZShop\Client\Pages\ProductDetails.razor"
-           
-
-         product = await ProductService.GetProduct(Id);
+    private ProductVariant GetSelectedVariant()
+    {
+        var variant = product.Variants.FirstOrDefault(v => v.PlatformId == currentPlatformId);
+        return variant;
     }
 
 #line default

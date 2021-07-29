@@ -2,33 +2,23 @@
 @implements IDisposable
 
 <ul class="list-unstyled">
-    @foreach(var product in ProductService.Products)
+    @foreach (var product in ProductService.Products)
     {
         <li class="media my-3" style="border-bottom: solid 0.4px #d9d9d9; padding-bottom: 2.5%; padding-top:2%;">
             <div class="media-img-wrapper mr-2" style=" margin-left: 2%;">
                 <a href="/product/@product.Id">
-                    <img class="media-img" src="@product.Image" alt="@product.Title" style="max-width:190px;"/>
+                    <img class="media-img" src="@product.Image" alt="@product.Title" style="max-width:190px;" />
                 </a>
             </div>
             <div class="media-body" style="padding-right:5%;">
                 <a href="/product/@product.Id">
                     <h4 class="mb-0">@product.Title</h4>
                 </a>
-                @if (product.Description.Length < 270)
-                {
-                    <p>@product.Description</p>
-                }
-                else
-                {
-                    <p>@product.Description.Substring(0, 270)...</p>
-                }
 
-                @if (product.OriginalPrice > product.Price)
-                {
-                    <h6 class="text-muted original-price">@product.OriginalPrice €</h6>
-                }
+                <p>@GetDescription(product)</p>
+
                 <h5 class="price">
-                    @product.Price €
+                    @GetPriceText(product)
                 </h5>
             </div>
         </li>
@@ -36,7 +26,7 @@
 </ul>
 
 
-@code { 
+@code {
     //[Parameter]
     //public int? CategoryId { get; set; } = null;
 
@@ -49,5 +39,32 @@
     public void Dispose()
     {
         ProductService.OnChange -= StateHasChanged;
+    }
+
+    private string GetPriceText(Product product)
+    {
+        var variants = product.Variants;
+        if (variants.Count == 0)
+        {
+            return string.Empty;
+        }
+        else if (variants.Count == 1)
+        {
+            return $"{variants[0].Price} €";
+        }
+        decimal minPrice = variants.Min(v => v.Price);
+        return $"Starting at ${minPrice} €";
+    }
+
+    private string GetDescription(Product product)
+    {
+        if (product.Description.Length < 270)
+        {
+            return product.Description;
+        }
+        else
+        {
+            return product.Description.Substring(0, 270);
+        }
     }
 }

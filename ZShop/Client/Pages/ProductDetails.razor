@@ -7,43 +7,52 @@
         <img class="media-img-big" src="@product.Image" alt="@product.Title" style="max-height: 360px; min-height: 360px; max-width: 300px;"/>
     </div>
     <div class="media-body" style="padding-right:5%;">
-        <h2 class="mb-0">@product.Title</h2>
+        <h2 class="mb-0" style="text-align:center;">@product.Title</h2>
         <p>@product.Description</p>
-        @if (product.Platforms != null && product.Platforms.Count > 0)
+        @if (product.Variants != null && product.Variants.Count > 0)
         {
             <div class="form-group" style="width: 20%; padding-bottom: 2.5%;">
-                <select class="form-control">
-                    @foreach (var platform in product.Platforms)
+                <select class="form-control" @bind="currentPlatformId">
+                    @foreach (var variant in product.Variants)
                     {
-                        <option>@platform.Name</option>
+                        <option value="@variant.PlatformId">@variant.Platform.Name</option>
                     }
                 </select>
             </div>
         }
-        @if (product.OriginalPrice > product.Price)
+        @if (GetSelectedVariant() != null)
         {
-            <h6 class="text-muted original-price">@product.OriginalPrice €</h6>
+            @if (GetSelectedVariant().OriginalPrice > GetSelectedVariant().Price)
+            {
+                <h6 class="text-muted original-price">@GetSelectedVariant().OriginalPrice €</h6>
+            }
+            <h4 class="price">
+                @GetSelectedVariant().Price €
+            </h4>
         }
-        <h4 class="price">
-            @product.Price €
-        </h4>
-        <button class="btn btn-primary"><i class="oi oi-cart">&nbsp;&nbsp;&nbsp;Add to cart</i></button>
+        <button class="btn btn-primary" style="width:40%; text-align:center;"><i class="oi oi-cart">&nbsp;&nbsp;&nbsp;Add to cart</i></button>
     </div>
 </div>
 
 @code {
     private Product product = new Product();
+    private int currentPlatformId = 1;
 
     [Parameter]
     public int Id { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        @*if (ProductService.Products == null || ProductService.Products.Count == 0)
+        product = await ProductService.GetProduct(Id);
+        if(product.Variants.Count > 0)
         {
-            ProductService.LoadProducts();
-        }*@
+            currentPlatformId = product.Variants[0].PlatformId; //If there is any platform for selected product, take first as current
+        }
+    }
 
-         product = await ProductService.GetProduct(Id);
+    private ProductVariant GetSelectedVariant()
+    {
+        var variant = product.Variants.FirstOrDefault(v => v.PlatformId == currentPlatformId);
+        return variant;
     }
 }

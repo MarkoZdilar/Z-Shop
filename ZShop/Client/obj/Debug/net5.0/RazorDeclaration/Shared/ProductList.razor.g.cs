@@ -111,8 +111,8 @@ using ZShop.Client.Services.CategoryService;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 39 "D:\CSharpSeminarski\ZShop\ZShop\Client\Shared\ProductList.razor"
-        
+#line 29 "D:\CSharpSeminarski\ZShop\ZShop\Client\Shared\ProductList.razor"
+       
     //[Parameter]
     //public int? CategoryId { get; set; } = null;
 
@@ -125,6 +125,33 @@ using ZShop.Client.Services.CategoryService;
     public void Dispose()
     {
         ProductService.OnChange -= StateHasChanged;
+    }
+
+    private string GetPriceText(Product product)
+    {
+        var variants = product.Variants;
+        if (variants.Count == 0)
+        {
+            return string.Empty;
+        }
+        else if (variants.Count == 1)
+        {
+            return $"{variants[0].Price} €";
+        }
+        decimal minPrice = variants.Min(v => v.Price);
+        return $"Starting at ${minPrice} €";
+    }
+
+    private string GetDescription(Product product)
+    {
+        if (product.Description.Length < 270)
+        {
+            return product.Description;
+        }
+        else
+        {
+            return product.Description.Substring(0, 270);
+        }
     }
 
 #line default
