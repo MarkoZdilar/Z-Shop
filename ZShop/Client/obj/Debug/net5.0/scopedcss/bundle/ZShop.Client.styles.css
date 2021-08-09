@@ -1,3 +1,71 @@
+/* /Pages/Cart.razor.rz.scp.css */
+.item-container[b-omvvxswqmr] {
+    display: flex;
+    padding: 6px;
+    border-bottom: solid 0.4px #d9d9d9;
+}
+
+.item-image-wrapper[b-omvvxswqmr] {
+    width: 150px;
+    text-align: center;
+}
+
+.item-image[b-omvvxswqmr] {
+    max-height: 150px;
+    max-width: 150px;
+    padding: 6px;
+}
+
+.item-name[b-omvvxswqmr] {
+    flex-grow: 1;
+    padding: 6px;
+}
+
+.item-price[b-omvvxswqmr] {
+    font-weight: 600;
+    text-align: right;
+    padding-top: 10%;
+    padding-right: 5px;
+}
+
+.item-price-total[b-omvvxswqmr] {
+    font-weight: 600;
+    font-size: 20px;
+    text-align: right;
+    color: darkred;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: 5px;
+}
+
+.cart-title[b-omvvxswqmr] {
+    color: #28A745;
+    font-size: 32px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.no-items[b-omvvxswqmr] {
+    text-align: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn-delete[b-omvvxswqmr] {
+    background: none;
+    border: none;
+    padding : 0px;
+    color: red;
+    font-size 12px;
+}
+
+.btn-delete:hover[b-omvvxswqmr] {
+    text-decoration: underline;
+}
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-b4k0ud0wi4] {
     position: relative;

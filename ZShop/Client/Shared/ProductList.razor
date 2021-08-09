@@ -58,13 +58,13 @@
 
     private string GetDescription(Product product)
     {
-        if (product.Description.Length < 270)
+        if (product.Description.Length < 260)
         {
             return product.Description;
         }
         else
         {
-            return product.Description.Substring(0, 270);
+            return product.Description.Substring(0, 260) + "...";
         }
     }
 }

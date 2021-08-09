@@ -1,5 +1,8 @@
 ﻿@page "/product/{id:int}"
 @inject IProductService ProductService
+@inject ILocalStorageService LocalStorage
+@inject IToastService ToastService
+@inject ICartService CartService 
 
 
 <div class="media media-details">
@@ -11,7 +14,7 @@
         <p>@product.Description</p>
         @if (product.Variants != null && product.Variants.Count > 0)
         {
-            <div class="form-group" style="width: 20%; padding-bottom: 2.5%;">
+            <div class="form-group" style="width: 30%; padding-bottom: 2.5%;">
                 <select class="form-control" @bind="currentPlatformId">
                     @foreach (var variant in product.Variants)
                     {
@@ -30,7 +33,7 @@
                 @GetSelectedVariant().Price €
             </h4>
         }
-        <button class="btn btn-primary" style="width:40%; text-align:center;"><i class="oi oi-cart">&nbsp;&nbsp;&nbsp;Add to cart</i></button>
+        <button class="btn btn-primary" @onclick="AddToCart" style="width:40%; text-align:center;"><i class="oi oi-cart">&nbsp;&nbsp;&nbsp;Add to cart</i></button>
     </div>
 </div>
 
@@ -54,5 +57,10 @@
     {
         var variant = product.Variants.FirstOrDefault(v => v.PlatformId == currentPlatformId);
         return variant;
+    }
+
+    private async Task AddToCart()
+    {
+        await CartService.AddToCart(GetSelectedVariant());
     }
 }

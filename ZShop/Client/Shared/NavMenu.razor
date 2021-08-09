@@ -1,4 +1,7 @@
 ﻿@inject ICategoryService CategoryService
+@inject ISyncLocalStorageService LocalStorage
+@inject ICartService CartService 
+@implements IDisposable
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" style="background-color: black;">
     <div class="container-fluid">
@@ -12,19 +15,35 @@
                 }
             </div>
         </div>
-        
 
         <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
+        <div class="cart-button" style="padding-left: 7%; ">
+            <a href="cart" class="btn btn-light">
+                <i class="oi oi-cart"></i>
+                Cart
+                <span class="badge badge-pill badge-success">@GetProductCount()</span>
+            </a>
+        </div>
     </div>
 </nav>
 
-@code {
+@code {      
     private bool collapseNavMenu = true;
 
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    protected override void OnInitialized()
+    {
+        CartService.OnChange += StateHasChanged; //StateHasChanged will be called when OnChange event is invoked(raised)
+    }
+
+    public void Dispose()//we need to implement this function because we implement IDisposable interface 
+    {
+        CartService.OnChange -= StateHasChanged;
+    }
 
     private void ToggleNavMenu()
     {
@@ -34,5 +53,11 @@
     protected override async Task OnInitializedAsync()
     {
         await CategoryService.LoadCategories();
+    }
+
+    private int GetProductCount()
+    {
+        var cart = LocalStorage.GetItem<List<ProductVariant>>("cart");
+        return cart != null ? cart.Count : 0;
     }
 }

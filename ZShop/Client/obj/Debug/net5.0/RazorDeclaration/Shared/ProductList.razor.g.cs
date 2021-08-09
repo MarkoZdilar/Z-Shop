@@ -103,6 +103,34 @@ using ZShop.Client.Services.CategoryService;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 14 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using ZShop.Client.Services.CartService;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 15 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using Blazored.LocalStorage;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 16 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using Blazored.Toast;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 17 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using Blazored.Toast.Services;
+
+#line default
+#line hidden
+#nullable disable
     public partial class ProductList : Microsoft.AspNetCore.Components.ComponentBase, IDisposable
     {
         #pragma warning disable 1998
@@ -144,13 +172,13 @@ using ZShop.Client.Services.CategoryService;
 
     private string GetDescription(Product product)
     {
-        if (product.Description.Length < 270)
+        if (product.Description.Length < 260)
         {
             return product.Description;
         }
         else
         {
-            return product.Description.Substring(0, 270);
+            return product.Description.Substring(0, 260) + "...";
         }
     }
 

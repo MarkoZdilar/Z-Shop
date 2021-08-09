@@ -6,7 +6,7 @@ using ZShop.Shared;
 
 namespace ZShop.Client.Services.ProductService
 {
-    interface IProductService
+    public interface IProductService
     {
         event Action OnChange;
         List<Product> Products { get; set; }

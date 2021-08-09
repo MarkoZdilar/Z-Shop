@@ -103,6 +103,34 @@ using ZShop.Client.Services.CategoryService;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 14 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using ZShop.Client.Services.CartService;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 15 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using Blazored.LocalStorage;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 16 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using Blazored.Toast;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 17 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using Blazored.Toast.Services;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/counter")]
     public partial class Counter : Microsoft.AspNetCore.Components.ComponentBase
     {

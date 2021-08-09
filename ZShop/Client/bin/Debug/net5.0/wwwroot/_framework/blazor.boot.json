@@ -7,8 +7,12 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
+      "Blazored.LocalStorage.dll": "sha256-uY2ERHMILJtHL7xbvGDKMMPCgWikvrFjzBjfQHD95B4=",
+      "Blazored.Toast.dll": "sha256-SnlpX7tqR4Or48+LUVR7CMv3xLhjy1JBnmDfQCb2GwM=",
+      "Bunit.Core.dll": "sha256-zovgNsbcjw0E1mKARotcbS2KOf6eBmcW1ZoYMMtVIQo=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-WlH0wmI5\/sRPenM4xwpdAaf+z3p\/Hi8pXr+nNJbq6hk=",
       "Microsoft.AspNetCore.Components.dll": "sha256-hBswojmhv0\/UiVhajMSnBSR5rk3AGi1AJk8t810UxrM=",
+      "Microsoft.AspNetCore.Components.Authorization.dll": "sha256-RETzcaqJB7uXmSqtgbNeKNNc5YC\/Ux+Ud\/XI\/\/VCR38=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-Af2ENvvmCbPgN12Bwzq8vtlRtVT2Aove7PIZELJwT3w=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-OcQ71I6yYhurPDL0LBxl8U5ny5flAnJZ92kR\/jajM5g=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-YPkzwucaQhYCKEPNFCN2A4aOSq9jNa1GWgpS54ThbKE=",
@@ -195,13 +199,13 @@
       "mscorlib.dll": "sha256-CUpudhojlkcrp2dsiJFF\/H\/WNg+uAhzoGkSWfOta\/U0=",
       "netstandard.dll": "sha256-vJpyW6cE\/+ewo5rVB5JUu9x2f8aLnqoIazac8ef5FzQ=",
       "System.Private.CoreLib.dll": "sha256-CvQTDivHJZAtRXyCbDa5f5+okJt39WRFrZSmXTMSau0=",
-      "ZShop.Shared.dll": "sha256-i3t2Wz3W8xjVbuNLzsybKMPRAkla+6JKni6DRzrnNYQ=",
-      "ZShop.Client.dll": "sha256-biPWUoJuz9GzYF8qIX4TCAuPW+QXXmLORsb5\/RkjAI0="
+      "ZShop.Shared.dll": "sha256-\/OwkOKbrq9rlEcVDxGHMJTOaZ2Qeh1not7ixz2gOVN8=",
+      "ZShop.Client.dll": "sha256-gvvUy0vK6NtgAFllHshEg0pzdfxvAcjKz+nPL+kXwT8="
     },
     "lazyAssembly": null,
     "pdb": {
-      "ZShop.Shared.pdb": "sha256-9O20Uq\/h65BVg0Yq\/HWfWgAqRGBCfgDwBWv6b0cVz88=",
-      "ZShop.Client.pdb": "sha256-OfUjljkV+w0J2BudIm4ZbFBfaRT9\/7svzUgq9ur4vQE="
+      "ZShop.Shared.pdb": "sha256-cf9cvJzvCdNHSxYVi\/UeW+DY2MN8Qq4z4BTq3xlfU\/I=",
+      "ZShop.Client.pdb": "sha256-G9i7qd8RGZTQuP2ShLzBvxUFWR4QzI00UkbRV18I57c="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-2OdnPsDgJyoSaSlvebGMRd2MxC+4UIqparqVrQZAFDE=",

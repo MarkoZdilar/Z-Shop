@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31424.327
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZShop.Server", "ZShop\Server\ZShop.Server.csproj", "{6E54507E-21C5-4C43-9974-5F822DF0E14F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZShop.Server", "ZShop\Server\ZShop.Server.csproj", "{6E54507E-21C5-4C43-9974-5F822DF0E14F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZShop.Client", "ZShop\Client\ZShop.Client.csproj", "{86BA492D-3281-47BC-BE3A-551AE79FA277}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZShop.Client", "ZShop\Client\ZShop.Client.csproj", "{86BA492D-3281-47BC-BE3A-551AE79FA277}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZShop.Shared", "ZShop\Shared\ZShop.Shared.csproj", "{1B0FDD19-C663-47EA-AF0C-9C935989827B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZShop.Shared", "ZShop\Shared\ZShop.Shared.csproj", "{1B0FDD19-C663-47EA-AF0C-9C935989827B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

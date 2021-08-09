@@ -103,6 +103,34 @@ using ZShop.Client.Services.CategoryService;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 14 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using ZShop.Client.Services.CartService;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 15 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using Blazored.LocalStorage;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 16 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using Blazored.Toast;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 17 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using Blazored.Toast.Services;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/product/{id:int}")]
     public partial class ProductDetails : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -112,7 +140,7 @@ using ZShop.Client.Services.CategoryService;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 37 "D:\CSharpSeminarski\ZShop\ZShop\Client\Pages\ProductDetails.razor"
+#line 40 "D:\CSharpSeminarski\ZShop\ZShop\Client\Pages\ProductDetails.razor"
        
     private Product product = new Product();
     private int currentPlatformId = 1;
@@ -135,9 +163,17 @@ using ZShop.Client.Services.CategoryService;
         return variant;
     }
 
+    private async Task AddToCart()
+    {
+        await CartService.AddToCart(GetSelectedVariant());
+    }
+
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ICartService CartService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IToastService ToastService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ILocalStorageService LocalStorage { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IProductService ProductService { get; set; }
     }
 }

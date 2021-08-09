@@ -103,7 +103,35 @@ using ZShop.Client.Services.CategoryService;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
+#nullable restore
+#line 14 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using ZShop.Client.Services.CartService;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 15 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using Blazored.LocalStorage;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 16 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using Blazored.Toast;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 17 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using Blazored.Toast.Services;
+
+#line default
+#line hidden
+#nullable disable
+    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase, IDisposable
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -111,11 +139,21 @@ using ZShop.Client.Services.CategoryService;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 24 "D:\CSharpSeminarski\ZShop\ZShop\Client\Shared\NavMenu.razor"
-       
+#line 33 "D:\CSharpSeminarski\ZShop\ZShop\Client\Shared\NavMenu.razor"
+             
     private bool collapseNavMenu = true;
 
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    protected override void OnInitialized()
+    {
+        CartService.OnChange += StateHasChanged; //StateHasChanged will be called when OnChange event is invoked(raised)
+    }
+
+    public void Dispose()//we need to implement this function because we implement IDisposable interface 
+    {
+        CartService.OnChange -= StateHasChanged;
+    }
 
     private void ToggleNavMenu()
     {
@@ -127,9 +165,17 @@ using ZShop.Client.Services.CategoryService;
         await CategoryService.LoadCategories();
     }
 
+    private int GetProductCount()
+    {
+        var cart = LocalStorage.GetItem<List<ProductVariant>>("cart");
+        return cart != null ? cart.Count : 0;
+    }
+
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ICartService CartService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ISyncLocalStorageService LocalStorage { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private ICategoryService CategoryService { get; set; }
     }
 }
