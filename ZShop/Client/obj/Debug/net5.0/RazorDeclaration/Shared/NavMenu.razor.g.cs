@@ -131,6 +131,13 @@ using Blazored.Toast.Services;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 18 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using Microsoft.AspNetCore.Components.Authorization;
+
+#line default
+#line hidden
+#nullable disable
     public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase, IDisposable
     {
         #pragma warning disable 1998
@@ -139,7 +146,7 @@ using Blazored.Toast.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 33 "D:\CSharpSeminarski\ZShop\ZShop\Client\Shared\NavMenu.razor"
+#line 48 "D:\CSharpSeminarski\ZShop\ZShop\Client\Shared\NavMenu.razor"
              
     private bool collapseNavMenu = true;
 
@@ -171,9 +178,16 @@ using Blazored.Toast.Services;
         return cart != null ? cart.Count : 0;
     }
 
+    private void Logout()
+    {
+        LocalStorage.RemoveItem("username");
+        AuthStateProvider.GetAuthenticationStateAsync(); //Just to refresh and get current auth state.
+    }
+
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthStateProvider { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private ICartService CartService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private ISyncLocalStorageService LocalStorage { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private ICategoryService CategoryService { get; set; }

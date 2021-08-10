@@ -427,12 +427,9 @@ D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\Razor\Shared\SurveyPromp
 D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
 D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs
 D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\Razor\Shared\NavMenu.razor.g.cs
-D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\build-gz\YlnpjhsC.gz
-D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\build-gz\zsF+tBmm.gz
 D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\build-gz\H3h+g1ao.gz
 D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\build-gz\w8d8bbzl.gz
 D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\build-gz\19eSTebG.gz
-D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\build-gz\iJyFLNkT.gz
 D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\build-gz\YZNA+V+a.gz
 D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\build-gz\kd4ZTlZn.gz
 D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\build-gz\diDoSJ5t.gz
@@ -649,7 +646,13 @@ D:\CSharpSeminarski\ZShop\ZShop\Client\bin\Debug\net5.0\wwwroot\_framework\Micro
 D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\build-gz\JL7DfyaO.gz
 D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\build-gz\vAjenCZk.gz
 D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\build-gz\k+u6NDlr.gz
-D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\build-gz\EoiuemJK.gz
 D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Cart.razor.g.cs
 D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\Razor\Pages\Cart.razor.g.cs
 D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\scopedcss\Pages\Cart.razor.rz.scp.css
+D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Login.razor.g.cs
+D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\Razor\Pages\Login.razor.g.cs
+D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\scopedcss\Pages\Login.razor.rz.scp.css
+D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\build-gz\tM2wB+Kn.gz
+D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\build-gz\JSisW7XR.gz
+D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\build-gz\ndQ5qKAS.gz
+D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\build-gz\bNCsG8th.gz

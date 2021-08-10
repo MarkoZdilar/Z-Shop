@@ -203,3 +203,11 @@ a, .btn-link {
     padding-top: 8%;
     padding-bottom: 6%;
 }
+
+.nav-link {
+    color: #cccccc !important;
+}
+
+.nav-link:hover {
+color: #28A745 !important;
+}

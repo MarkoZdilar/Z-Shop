@@ -125,6 +125,13 @@ using Blazored.Toast.Services;
 #line hidden
 #nullable disable
 #nullable restore
+#line 18 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using Microsoft.AspNetCore.Components.Authorization;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "D:\CSharpSeminarski\ZShop\ZShop\Client\Pages\FetchData.razor"
 using ZShop.Shared;
 

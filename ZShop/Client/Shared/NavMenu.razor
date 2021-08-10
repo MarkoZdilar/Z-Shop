@@ -1,7 +1,9 @@
 ﻿@inject ICategoryService CategoryService
 @inject ISyncLocalStorageService LocalStorage
 @inject ICartService CartService 
+@inject AuthenticationStateProvider AuthStateProvider
 @implements IDisposable
+
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" style="background-color: black;">
     <div class="container-fluid">
@@ -27,6 +29,19 @@
                 <span class="badge badge-pill badge-success">@GetProductCount()</span>
             </a>
         </div>
+        <AuthorizeView>
+            <NotAuthorized>
+                <NavLink class="nav-link" href="login" id="login-link" style="color: #28A745;">
+                    <span class="oi oi-account-login" aria-hidden="true"></span>Login
+                </NavLink>
+            </NotAuthorized>
+            <Authorized>
+                <a class="nav-link" @onclick ="Logout" style="cursor: pointer">
+                    <span class="oi oi-account-logout" aria-hidden="true"></span>Logout
+                </a>
+            </Authorized>
+
+        </AuthorizeView>
     </div>
 </nav>
 
@@ -59,5 +74,11 @@
     {
         var cart = LocalStorage.GetItem<List<ProductVariant>>("cart");
         return cart != null ? cart.Count : 0;
+    }
+
+    private void Logout()
+    {
+        LocalStorage.RemoveItem("username");
+        AuthStateProvider.GetAuthenticationStateAsync(); //Just to refresh and get current auth state.
     }
 }

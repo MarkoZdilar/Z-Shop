@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace ZShop.Client
+namespace ZShop.Client.Pages
 {
     #line hidden
     using System;
@@ -138,13 +138,33 @@ using Microsoft.AspNetCore.Components.Authorization;
 #line default
 #line hidden
 #nullable disable
-    public partial class _Imports : System.Object
+    [Microsoft.AspNetCore.Components.RouteAttribute("/login")]
+    public partial class Login : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
-        protected void Execute()
+        protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 20 "D:\CSharpSeminarski\ZShop\ZShop\Client\Pages\Login.razor"
+       
+    private User user = new User();
+
+    private async void HandleLogin()
+    {
+        Console.WriteLine("Log me in!");
+        await LocalStorage.SetItemAsync<string>("username", user.Username);
+        await AuthStateProvider.GetAuthenticationStateAsync(); //By calling this method NotifyAuthenticationStateChanged event would be raised and all components will be alarmed 
+        NavigationManager.NavigateTo("");
+    }
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthStateProvider { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ILocalStorageService LocalStorage { get; set; }
     }
 }
 #pragma warning restore 1591

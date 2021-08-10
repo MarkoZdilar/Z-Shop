@@ -62,11 +62,32 @@
     border: none;
     padding : 0px;
     color: red;
-    font-size 12px;
+    font-size: 12px;
 }
 
 .btn-delete:hover[b-omvvxswqmr] {
     text-decoration: underline;
+}
+/* /Pages/Login.razor.rz.scp.css */
+.form-group[b-8vgo3pwl9u] {
+    width: 75%;
+    text-align: center;
+    padding-left: 25%;
+}
+
+.btn.btn-success[b-8vgo3pwl9u] {
+    margin-bottom: 15%;
+    margin-left: 45%;
+    width: 10%;
+}
+
+.title[b-8vgo3pwl9u] {
+    text-align: center;
+    font-size: 34px;
+    font-weight: bold;
+    color: #28A745;
+    margin-top: 4%;
+    margin-bottom: 7%;
 }
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-b4k0ud0wi4] {

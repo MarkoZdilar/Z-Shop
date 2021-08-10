@@ -2,6 +2,7 @@
 @page "/{categoryurl}"
 @inject ICategoryService CategoryService;
 @inject IProductService ProductService;
+@inject ISyncLocalStorageService LocalStorage 
 
 
 @if (category != null)
@@ -13,9 +14,18 @@
 }
 else
 {
-    <br />
-    <br />
-    <h2 style="text-align: center; color: #28A745; font-weight: bold; ">Welcome to Z-Shop!</h2>
+    <AuthorizeView>
+        <NotAuthorized>
+            <br />
+            <br />
+            <h2 style="text-align: center; color: #28A745; font-weight: bold; ">Welcome to Z-Shop!</h2>
+        </NotAuthorized>
+        <Authorized>
+            <br />
+            <br />
+            <h2 style="text-align: center; color: #28A745; font-weight: bold; ">Welcome back, @LocalStorage.GetItemAsString("username").Replace("\"", "")!</h2>
+        </Authorized>
+    </AuthorizeView>
     <ProductList />
 }
 
