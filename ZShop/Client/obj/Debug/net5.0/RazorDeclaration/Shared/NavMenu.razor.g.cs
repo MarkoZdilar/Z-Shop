@@ -112,28 +112,42 @@ using ZShop.Client.Services.CartService;
 #nullable disable
 #nullable restore
 #line 15 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
-using Blazored.LocalStorage;
+using ZShop.Client.Services.StatsService;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 16 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
-using Blazored.Toast;
+using Blazored.LocalStorage;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 17 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
-using Blazored.Toast.Services;
+using Blazored.Toast;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 18 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using Blazored.Toast.Services;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 19 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 20 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using Blazored.Typeahead;
 
 #line default
 #line hidden
@@ -146,8 +160,9 @@ using Microsoft.AspNetCore.Components.Authorization;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 48 "D:\CSharpSeminarski\ZShop\ZShop\Client\Shared\NavMenu.razor"
+#line 64 "D:\CSharpSeminarski\ZShop\ZShop\Client\Shared\NavMenu.razor"
              
+    private Product selectedProduct;
     private bool collapseNavMenu = true;
 
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
@@ -184,9 +199,24 @@ using Microsoft.AspNetCore.Components.Authorization;
         AuthStateProvider.GetAuthenticationStateAsync(); //Just to refresh and get current auth state.
     }
 
+    private void HandleSearch(Product product)
+    {
+        if (product == null) return;
+        selectedProduct = product;
+        NavigationManager.NavigateTo($"product/{selectedProduct.Id}");
+    }
+
+    private async Task<IEnumerable<Product>> SearchProduct(string searchText)
+    {
+        var response = await ProductService.SearchProducts(searchText);
+        return response;
+    }
+
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IProductService ProductService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private AuthenticationStateProvider AuthStateProvider { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private ICartService CartService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private ISyncLocalStorageService LocalStorage { get; set; }

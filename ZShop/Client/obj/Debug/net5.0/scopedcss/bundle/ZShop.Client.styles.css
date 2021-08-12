@@ -66,6 +66,26 @@
 .btn-delete:hover[b-omvvxswqmr] {
     text-decoration: underline;
 }
+
+.table.table-striped[b-omvvxswqmr] {
+    width: 70%;
+    margin-left: 15%;
+    margin-bottom: 17%;
+}
+
+.placed-order-title[b-omvvxswqmr] {
+    color: #28A745;
+    font-size: 32px;
+    margin-top: 3%;
+    margin-bottom: 4%;
+    font-weight: bold;
+    text-align: center;
+}
+
+.placed-order-description[b-omvvxswqmr] {
+    color: #28A745;
+    margin-left: 15%;
+}
 /* /Pages/Login.razor.rz.scp.css */
 .form-group[b-8vgo3pwl9u] {
     width: 75%;
@@ -87,6 +107,13 @@
     margin-top: 4%;
     margin-bottom: 7%;
 }
+/* /Pages/ProductDetails.razor.rz.scp.css */
+.views[b-17vcsvagr0] {
+    font-size: 14px;
+    color: gray;
+    text-align: right;
+}
+
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-b4k0ud0wi4] {
     position: relative;

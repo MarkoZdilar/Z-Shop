@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "JsY+Dw4SQqBAYqsLxGEAs8WHYz2mfZyb5H5jIN58NEUAcvsRx2ZYPO4KjFpJ3lJ935aswhnXpNmb4wjfJ7iIxw==",
+  "dgSpecHash": "qdMZycBuDBX5buY6+KCbd3ApoXjkC5z/rmtdzQaNDw+itlsbIBGhgrpG6sSLn+AXROU1O2CPL2KcEQDHTnQB7A==",
   "success": true,
   "projectFilePath": "D:\\CSharpSeminarski\\ZShop\\ZShop\\Client\\ZShop.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Marko Zdilar\\.nuget\\packages\\blazored.localstorage\\4.1.2\\blazored.localstorage.4.1.2.nupkg.sha512",
     "C:\\Users\\Marko Zdilar\\.nuget\\packages\\blazored.toast\\3.1.2\\blazored.toast.3.1.2.nupkg.sha512",
+    "C:\\Users\\Marko Zdilar\\.nuget\\packages\\blazored.typeahead\\4.6.0\\blazored.typeahead.4.6.0.nupkg.sha512",
     "C:\\Users\\Marko Zdilar\\.nuget\\packages\\bunit.core\\1.1.5\\bunit.core.1.1.5.nupkg.sha512",
     "C:\\Users\\Marko Zdilar\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.9\\microsoft.aspnetcore.authorization.5.0.9.nupkg.sha512",
     "C:\\Users\\Marko Zdilar\\.nuget\\packages\\microsoft.aspnetcore.components\\5.0.9\\microsoft.aspnetcore.components.5.0.9.nupkg.sha512",

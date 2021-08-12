@@ -2,10 +2,12 @@
 @inject ISyncLocalStorageService LocalStorage
 @inject ICartService CartService 
 @inject AuthenticationStateProvider AuthStateProvider
+@inject IProductService ProductService
+@inject NavigationManager NavigationManager  
 @implements IDisposable
 
 
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" style="background-color: black;">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#"><h2>Z-Shop</h2></a>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -17,11 +19,25 @@
                 }
             </div>
         </div>
-
-        <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        <div style="width: 15%; background-color: white;">
+            <BlazoredTypeahead SearchMethod="@SearchProduct"
+                               TValue="Product"
+                               TItem="Product"
+                               Value="selectedProduct"
+                               ValueChanged="HandleSearch"
+                               ValueExpression="@(() => selectedProduct)"
+                               placeholder ="Search..">
+                <SelectedTemplate>
+                    @context.Title
+                </SelectedTemplate>
+                <ResultTemplate>
+                    @context.Title
+                </ResultTemplate>
+                <NotFoundTemplate>
+                    Soryy, there weren't any products found.
+                </NotFoundTemplate>
+            </BlazoredTypeahead>
+        </div>
         <div class="cart-button" style="padding-left: 7%; ">
             <a href="cart" class="btn btn-light">
                 <i class="oi oi-cart"></i>
@@ -46,6 +62,7 @@
 </nav>
 
 @code {      
+    private Product selectedProduct;
     private bool collapseNavMenu = true;
 
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
@@ -80,5 +97,18 @@
     {
         LocalStorage.RemoveItem("username");
         AuthStateProvider.GetAuthenticationStateAsync(); //Just to refresh and get current auth state.
+    }
+
+    private void HandleSearch(Product product)
+    {
+        if (product == null) return;
+        selectedProduct = product;
+        NavigationManager.NavigateTo($"product/{selectedProduct.Id}");
+    }
+
+    private async Task<IEnumerable<Product>> SearchProduct(string searchText)
+    {
+        var response = await ProductService.SearchProducts(searchText);
+        return response;
     }
 }

@@ -53,7 +53,7 @@
             return $"{variants[0].Price} €";
         }
         decimal minPrice = variants.Min(v => v.Price);
-        return $"Starting at ${minPrice} €";
+        return $"Starting at {minPrice} €";
     }
 
     private string GetDescription(Product product)

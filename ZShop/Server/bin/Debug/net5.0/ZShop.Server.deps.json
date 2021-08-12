@@ -352,6 +352,21 @@
           "lib/netstandard2.0/Blazored.Toast.dll": {}
         }
       },
+      "Blazored.Typeahead/4.6.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "5.0.9",
+          "Microsoft.AspNetCore.Components.Web": "5.0.8"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Blazored.Typeahead.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/Blazored.Typeahead.dll": {}
+        }
+      },
       "bunit.core/1.1.5": {
         "dependencies": {
           "Microsoft.AspNetCore.Components": "5.0.9",
@@ -1554,6 +1569,7 @@
         "dependencies": {
           "Blazored.LocalStorage": "4.1.2",
           "Blazored.Toast": "3.1.2",
+          "Blazored.Typeahead": "4.6.0",
           "Microsoft.AspNetCore.Components.Authorization": "5.0.9",
           "Microsoft.AspNetCore.Components.WebAssembly": "5.0.8",
           "System.Net.Http.Json": "5.0.0",
@@ -3233,6 +3249,13 @@
       "sha512": "sha512-EDwxOEeqcT8vNIqn+sCYv/Maouu223UfMCuBxtlUpqPsVHql6OmhZgpo3j9GssIkGU1utKKdi4NaAoUoXDKWSQ==",
       "path": "blazored.toast/3.1.2",
       "hashPath": "blazored.toast.3.1.2.nupkg.sha512"
+    },
+    "Blazored.Typeahead/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eYViTbA5DmsaUmPO3tUzDxahido811vU0/mNtGfIkA4SqTxN2VAwRJgCmoVxFiHwVWtPjVcNGIpUI44lTe24bg==",
+      "path": "blazored.typeahead/4.6.0",
+      "hashPath": "blazored.typeahead.4.6.0.nupkg.sha512"
     },
     "bunit.core/1.1.5": {
       "type": "package",

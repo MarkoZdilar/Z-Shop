@@ -6,8 +6,9 @@
 
 
 <div class="media media-details">
+
     <div class="media-img-big-wrapper mr-2">
-        <img class="media-img-big" src="@product.Image" alt="@product.Title" style="max-height: 360px; min-height: 360px; max-width: 300px;"/>
+        <img class="media-img-big" src="@product.Image" alt="@product.Title" style="max-height: 410px; min-height: 410px; max-width: 310px;" />
     </div>
     <div class="media-body" style="padding-right:5%;">
         <h2 class="mb-0" style="text-align:center;">@product.Title</h2>
@@ -33,7 +34,15 @@
                 @GetSelectedVariant().Price €
             </h4>
         }
+        <EditForm Model="cartItem">
+            <div class="form-group">
+                <InputNumber id="quantity" @bind-Value="cartItem.Quantity" class="form-control" style="width: 70px;"></InputNumber>
+            </div>
+        </EditForm>
         <button class="btn btn-primary" @onclick="AddToCart" style="width:40%; text-align:center;"><i class="oi oi-cart">&nbsp;&nbsp;&nbsp;Add to cart</i></button>
+        <div class="views">
+            <i class="oi oi-eye"></i> @product.Views.ToString("0##")
+        </div>
     </div>
 </div>
 
@@ -41,10 +50,12 @@
     private Product product = new Product();
     private int currentPlatformId = 1;
 
+    private CartItem cartItem = new CartItem { Quantity = 1 };
+
     [Parameter]
     public int Id { get; set; }
 
-    protected override async Task OnInitializedAsync()
+    protected override async Task OnParametersSetAsync()
     {
         product = await ProductService.GetProduct(Id);
         if(product.Variants.Count > 0)
@@ -61,6 +72,15 @@
 
     private async Task AddToCart()
     {
-        await CartService.AddToCart(GetSelectedVariant());
+        var productVariant = GetSelectedVariant();
+
+        cartItem.PlatformId = productVariant.PlatformId;
+        cartItem.PlatformName = productVariant.Platform.Name;
+        cartItem.Image = product.Image;
+        cartItem.Price = productVariant.Price;
+        cartItem.ProductId = productVariant.ProductId;
+        cartItem.ProductTitle = product.Title;
+
+        await CartService.AddToCart(cartItem);
     }
 }

@@ -36,5 +36,11 @@ namespace ZShop.Server.Controllers
         {
             return Ok(await _productService.GetProduct(id));
         }
+
+        [HttpGet("Search/{searchText}")] //Full route will be api/[controller]/Search/{searchText}
+        public async Task<ActionResult<List<Product>>> SearchProducts(string searchText)
+        {
+            return Ok(await _productService.SearchProducts(searchText));
+        }
     }
 }

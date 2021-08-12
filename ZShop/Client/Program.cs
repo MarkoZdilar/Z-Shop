@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using ZShop.Client.Services.CartService;
 using ZShop.Client.Services.CategoryService;
 using ZShop.Client.Services.ProductService;
+using ZShop.Client.Services.StatsService;
 
 namespace ZShop.Client
 {
@@ -27,6 +28,7 @@ namespace ZShop.Client
             builder.Services.AddScoped<IProductService, ProductService>();
             builder.Services.AddScoped<ICategoryService, CategoryService>();
             builder.Services.AddScoped<ICartService, CartService>();
+            builder.Services.AddScoped<IStatsService, StatsService>();
             builder.Services.AddBlazoredLocalStorage();
             builder.Services.AddBlazoredToast();
             builder.Services.AddOptions();

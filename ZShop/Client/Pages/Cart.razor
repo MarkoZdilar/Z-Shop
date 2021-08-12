@@ -1,38 +1,75 @@
 ﻿@page "/cart"
 @inject ICartService CartService
 
-<link rel="stylesheet" type="text/css" href="Cart.razor.css">
-<h3 class="cart-title">Shopping Cart</h3>
-
-@if(cartItems == null  || cartItems.Count <= 0)
+@if (!orderPlaced)
 {
-    <div class="no-items">
-        <span>You don't have any items in your cart.</span>
-    </div>
+    <h3 class="cart-title">Shopping Cart</h3>
+
+    @if (cartItems == null || cartItems.Count <= 0)
+    {
+        <div class="no-items">
+            <span>You don't have any items in your cart.</span>
+        </div>
+    }
+    else
+    {
+        <div>
+            @foreach (var item in cartItems)
+            {
+                <div class="item-container">
+                    <div class="item-image-wrapper"> <img src="@item.Image" class="item-image" /></div>
+                    <div class="item-name">
+                        <h5><a href="/product/@item.ProductId">@item.ProductTitle</a></h5>
+                        <span>@item.PlatformName</span><br />
+                        <button class="btn-delete" @onclick="@(() => DeleteItem(item))">Delete</button>
+                        <EditForm Model="item">
+                            <InputNumber id="quantity" @bind-Value="item.Quantity" class="form-control" style="width: 70px;"></InputNumber>
+                        </EditForm>
+                    </div>
+                    <div class="item-price">@(item.Price * item.Quantity) €</div>
+                </div>
+            }
+            <div class="item-price-total">
+                Total (@cartItems.Count): @cartItems.Sum(item => item.Price * item.Quantity) €
+            </div>
+            <div style="text-align: center; margin-top: 10px; margin-bottom: 3%;">
+                <button class="btn btn-primary btn-lg" @onclick="PlaceOrder">Place Order</button>
+            </div>
+        </div>
+    }
 }
 else
 {
-    <div>
-        @foreach (var item in cartItems)
-        {
-            <div class="item-container">
-                <div class="item-image-wrapper"> <img src="@item.Image" class="item-image"/></div>
-                <div class="item-name">
-                    <h5><a href="/product/@item.ProductId">@item.ProductTitle</a></h5>
-                    <span>@item.PlatformName</span><br />
-                    <button class="btn-delete" @onclick="@(() => DeleteItem(item))">Delete</button>
-                </div>
-                <div class="item-price">@item.Price €</div>
-            </div>
-        }
-    <div class="item-price-total">
-        Total (@cartItems.Count): @cartItems.Sum(item => item.Price) €
-    </div>
-    </div>
-}
+    <h3 class="placed-order-title">Thank you for your order!</h3>
+    <h4 class="placed-order-description">Here is what you get:</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Game</th>
+                <th scope="col">Platform</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(int i = 0; i < cartItems.Count; i++)
+            {
+            <tr>
+                <th scope="row">@(i+1).</th>
+                <td>@cartItems[i].ProductTitle</td>
+                <td>@cartItems[i].PlatformName</td>
+                <td>@cartItems[i].Quantity</td>
+                <td>@(cartItems[i].Price * @cartItems[i].Quantity) €</td>
+            </tr>
 
+            }
+        </tbody>
+    </table>
+}
 @code {
     List<CartItem> cartItems = new List<CartItem>();
+    bool orderPlaced = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -43,5 +80,11 @@ else
     {
         await CartService.DeleteItem(item);
         cartItems = await CartService.GetCartItems();
+    }
+
+    private async Task PlaceOrder() //async because we want to empty the cart which means call the cartService
+    {
+        orderPlaced = true;
+        await CartService.EmptyCart();
     }
 }

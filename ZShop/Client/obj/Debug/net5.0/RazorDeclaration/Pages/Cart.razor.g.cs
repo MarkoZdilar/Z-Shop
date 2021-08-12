@@ -112,28 +112,42 @@ using ZShop.Client.Services.CartService;
 #nullable disable
 #nullable restore
 #line 15 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
-using Blazored.LocalStorage;
+using ZShop.Client.Services.StatsService;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 16 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
-using Blazored.Toast;
+using Blazored.LocalStorage;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 17 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
-using Blazored.Toast.Services;
+using Blazored.Toast;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 18 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using Blazored.Toast.Services;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 19 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 20 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using Blazored.Typeahead;
 
 #line default
 #line hidden
@@ -147,9 +161,10 @@ using Microsoft.AspNetCore.Components.Authorization;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 34 "D:\CSharpSeminarski\ZShop\ZShop\Client\Pages\Cart.razor"
+#line 70 "D:\CSharpSeminarski\ZShop\ZShop\Client\Pages\Cart.razor"
        
     List<CartItem> cartItems = new List<CartItem>();
+    bool orderPlaced = false;
 
     protected override async Task OnInitializedAsync()
     {
@@ -160,6 +175,12 @@ using Microsoft.AspNetCore.Components.Authorization;
     {
         await CartService.DeleteItem(item);
         cartItems = await CartService.GetCartItems();
+    }
+
+    private async Task PlaceOrder() //async because we want to empty the cart which means call the cartService
+    {
+        orderPlaced = true;
+        await CartService.EmptyCart();
     }
 
 #line default

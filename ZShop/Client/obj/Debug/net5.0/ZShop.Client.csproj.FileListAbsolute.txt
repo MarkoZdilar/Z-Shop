@@ -656,3 +656,7 @@ D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\build-gz\tM2wB+Kn.gz
 D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\build-gz\JSisW7XR.gz
 D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\build-gz\ndQ5qKAS.gz
 D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\build-gz\bNCsG8th.gz
+D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\scopedcss\Pages\ProductDetails.razor.rz.scp.css
+D:\CSharpSeminarski\ZShop\ZShop\Client\bin\Debug\net5.0\wwwroot\_framework\Blazored.Typeahead.dll.gz
+D:\CSharpSeminarski\ZShop\ZShop\Client\bin\Debug\net5.0\wwwroot\_framework\Blazored.Typeahead.dll
+D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\build-gz\SrkqejLF.gz

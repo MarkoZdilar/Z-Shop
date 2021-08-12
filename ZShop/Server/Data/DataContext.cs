@@ -17,6 +17,8 @@ namespace ZShop.Server.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<Platform> Platforms { get; set; }
 
+        public DbSet<Stats> Stats { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ProductVariant>()

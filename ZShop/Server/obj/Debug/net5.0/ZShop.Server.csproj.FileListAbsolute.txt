@@ -93,3 +93,4 @@ D:\CSharpSeminarski\ZShop\ZShop\Server\bin\Debug\net5.0\Blazored.LocalStorage.dl
 D:\CSharpSeminarski\ZShop\ZShop\Server\bin\Debug\net5.0\Blazored.Toast.dll
 D:\CSharpSeminarski\ZShop\ZShop\Server\bin\Debug\net5.0\Bunit.Core.dll
 D:\CSharpSeminarski\ZShop\ZShop\Server\bin\Debug\net5.0\Microsoft.AspNetCore.Components.Authorization.dll
+D:\CSharpSeminarski\ZShop\ZShop\Server\bin\Debug\net5.0\Blazored.Typeahead.dll

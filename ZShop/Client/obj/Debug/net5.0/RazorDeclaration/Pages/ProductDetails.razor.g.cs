@@ -112,28 +112,42 @@ using ZShop.Client.Services.CartService;
 #nullable disable
 #nullable restore
 #line 15 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
-using Blazored.LocalStorage;
+using ZShop.Client.Services.StatsService;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 16 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
-using Blazored.Toast;
+using Blazored.LocalStorage;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 17 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
-using Blazored.Toast.Services;
+using Blazored.Toast;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 18 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using Blazored.Toast.Services;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 19 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 20 "D:\CSharpSeminarski\ZShop\ZShop\Client\_Imports.razor"
+using Blazored.Typeahead;
 
 #line default
 #line hidden
@@ -147,15 +161,17 @@ using Microsoft.AspNetCore.Components.Authorization;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 40 "D:\CSharpSeminarski\ZShop\ZShop\Client\Pages\ProductDetails.razor"
+#line 49 "D:\CSharpSeminarski\ZShop\ZShop\Client\Pages\ProductDetails.razor"
        
     private Product product = new Product();
     private int currentPlatformId = 1;
 
+    private CartItem cartItem = new CartItem { Quantity = 1 };
+
     [Parameter]
     public int Id { get; set; }
 
-    protected override async Task OnInitializedAsync()
+    protected override async Task OnParametersSetAsync()
     {
         product = await ProductService.GetProduct(Id);
         if(product.Variants.Count > 0)
@@ -172,7 +188,16 @@ using Microsoft.AspNetCore.Components.Authorization;
 
     private async Task AddToCart()
     {
-        await CartService.AddToCart(GetSelectedVariant());
+        var productVariant = GetSelectedVariant();
+
+        cartItem.PlatformId = productVariant.PlatformId;
+        cartItem.PlatformName = productVariant.Platform.Name;
+        cartItem.Image = product.Image;
+        cartItem.Price = productVariant.Price;
+        cartItem.ProductId = productVariant.ProductId;
+        cartItem.ProductTitle = product.Title;
+
+        await CartService.AddToCart(cartItem);
     }
 
 #line default

@@ -3,4 +3,5 @@
   <ContentRoot BasePath="/" Path="D:\CSharpSeminarski\ZShop\ZShop\Client\obj\Debug\net5.0\scopedcss\bundle\" />
   <ContentRoot BasePath="/" Path="D:\CSharpSeminarski\ZShop\ZShop\Client\wwwroot\" />
   <ContentRoot BasePath="_content/Blazored.Toast" Path="C:\Users\Marko Zdilar\.nuget\packages\blazored.toast\3.1.2\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/Blazored.Typeahead" Path="C:\Users\Marko Zdilar\.nuget\packages\blazored.typeahead\4.6.0\build\..\staticwebassets\" />
 </StaticWebAssets>

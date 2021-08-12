@@ -36,6 +36,25 @@
           "buildMultiTargeting/Blazored.Toast.props": {}
         }
       },
+      "Blazored.Typeahead/4.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "3.1.2",
+          "Microsoft.AspNetCore.Components.Web": "3.1.2"
+        },
+        "compile": {
+          "lib/netstandard2.1/Blazored.Typeahead.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Blazored.Typeahead.dll": {}
+        },
+        "build": {
+          "buildTransitive/Blazored.Typeahead.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazored.Typeahead.props": {}
+        }
+      },
       "bunit.core/1.1.5": {
         "type": "package",
         "dependencies": {
@@ -415,6 +434,25 @@
           "buildMultiTargeting/Blazored.Toast.props": {}
         }
       },
+      "Blazored.Typeahead/4.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "3.1.2",
+          "Microsoft.AspNetCore.Components.Web": "3.1.2"
+        },
+        "compile": {
+          "lib/netstandard2.1/Blazored.Typeahead.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Blazored.Typeahead.dll": {}
+        },
+        "build": {
+          "buildTransitive/Blazored.Typeahead.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Blazored.Typeahead.props": {}
+        }
+      },
       "bunit.core/1.1.5": {
         "type": "package",
         "dependencies": {
@@ -791,6 +829,25 @@
         "lib/netstandard2.0/Blazored.Toast.dll",
         "staticwebassets/blazored-toast.css",
         "staticwebassets/blazored-toast.min.css"
+      ]
+    },
+    "Blazored.Typeahead/4.6.0": {
+      "sha512": "eYViTbA5DmsaUmPO3tUzDxahido811vU0/mNtGfIkA4SqTxN2VAwRJgCmoVxFiHwVWtPjVcNGIpUI44lTe24bg==",
+      "type": "package",
+      "path": "blazored.typeahead/4.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "blazored.typeahead.4.6.0.nupkg.sha512",
+        "blazored.typeahead.nuspec",
+        "build/Blazored.Typeahead.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/Blazored.Typeahead.props",
+        "buildTransitive/Blazored.Typeahead.props",
+        "icon.png",
+        "lib/netstandard2.1/Blazored.Typeahead.dll",
+        "staticwebassets/blazored-typeahead.css",
+        "staticwebassets/blazored-typeahead.js"
       ]
     },
     "bunit.core/1.1.5": {
@@ -1357,6 +1414,7 @@
     "net5.0": [
       "Blazored.LocalStorage >= 4.1.2",
       "Blazored.Toast >= 3.1.2",
+      "Blazored.Typeahead >= 4.6.0",
       "Microsoft.AspNetCore.Components.Authorization >= 5.0.9",
       "Microsoft.AspNetCore.Components.WebAssembly >= 5.0.8",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 5.0.8",
@@ -1421,6 +1479,10 @@
           "Blazored.Toast": {
             "target": "Package",
             "version": "[3.1.2, )"
+          },
+          "Blazored.Typeahead": {
+            "target": "Package",
+            "version": "[4.6.0, )"
           },
           "Microsoft.AspNetCore.Components.Authorization": {
             "target": "Package",
