@@ -42,5 +42,11 @@ namespace ZShop.Server.Controllers
         {
             return Ok(await _productService.SearchProducts(searchText));
         }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateProduct(Product product)
+        {
+            return Ok(await _productService.CreateProduct(product));
+        }
     }
 }

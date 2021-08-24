@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qdMZycBuDBX5buY6+KCbd3ApoXjkC5z/rmtdzQaNDw+itlsbIBGhgrpG6sSLn+AXROU1O2CPL2KcEQDHTnQB7A==",
+  "dgSpecHash": "mrg3jmUYazgpBlwIszzHhq9iHb/5jK/fkajtb4ZFz07hinwtm8Ln1WgefrSEHaLMUj17IFF76KCshn2Pc4+2zA==",
   "success": true,
   "projectFilePath": "D:\\CSharpSeminarski\\ZShop\\ZShop\\Client\\ZShop.Client.csproj",
   "expectedPackageFiles": [
@@ -35,7 +35,7 @@
     "C:\\Users\\Marko Zdilar\\.nuget\\packages\\microsoft.jsinterop.webassembly\\5.0.8\\microsoft.jsinterop.webassembly.5.0.8.nupkg.sha512",
     "C:\\Users\\Marko Zdilar\\.nuget\\packages\\system.io.pipelines\\5.0.1\\system.io.pipelines.5.0.1.nupkg.sha512",
     "C:\\Users\\Marko Zdilar\\.nuget\\packages\\system.net.http.json\\5.0.0\\system.net.http.json.5.0.0.nupkg.sha512",
-    "C:\\Users\\Marko Zdilar\\.nuget\\packages\\microsoft.netcore.app.runtime.browser-wasm\\5.0.8\\microsoft.netcore.app.runtime.browser-wasm.5.0.8.nupkg.sha512"
+    "C:\\Users\\Marko Zdilar\\.nuget\\packages\\microsoft.netcore.app.runtime.browser-wasm\\5.0.9\\microsoft.netcore.app.runtime.browser-wasm.5.0.9.nupkg.sha512"
   ],
   "logs": []
 }

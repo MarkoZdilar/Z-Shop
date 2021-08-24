@@ -1,0 +1,20 @@
+﻿@page "/create"
+
+<h3>Add new product</h3>
+
+<EditForm Model="@newProduct" OnValidSubmit="CreateNewProduct">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <InputText id="title" @bind-Value="newProduct.Title" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</EditForm>
+
+@code {
+    private Product newProduct = new Product();
+
+    void CreateNewProduct()
+    {
+        Console.WriteLine($"Create that product: {newProduct.Title}!");
+    }
+}

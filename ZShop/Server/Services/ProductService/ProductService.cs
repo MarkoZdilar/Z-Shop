@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,13 @@ namespace ZShop.Server.Services.ProductService
         {
             _categoryService = categoryService;
             _context = context;
+        }
+
+        public async Task<List<Product>> CreateProduct(Product product)
+        {
+            _context.Products.Add(product);
+            await _context.SaveChangesAsync();
+            return await _context.Products.Include(p => p.Variants).ToListAsync();
         }
 
         public async Task<List<Product>> GetAllProducts()
@@ -50,5 +58,7 @@ namespace ZShop.Server.Services.ProductService
                 .Where(p => p.Title.Contains(searchText))
                 .ToListAsync();
         }
+
+
     }
 }

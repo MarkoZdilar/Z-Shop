@@ -19,14 +19,14 @@
                 }
             </div>
         </div>
-        <div style="width: 15%; background-color: white;">
+        <div style="width: 10%; background-color: white;">
             <BlazoredTypeahead SearchMethod="@SearchProduct"
                                TValue="Product"
                                TItem="Product"
                                Value="selectedProduct"
                                ValueChanged="HandleSearch"
                                ValueExpression="@(() => selectedProduct)"
-                               placeholder ="Search..">
+                               placeholder="Search..">
                 <SelectedTemplate>
                     @context.Title
                 </SelectedTemplate>
@@ -38,7 +38,7 @@
                 </NotFoundTemplate>
             </BlazoredTypeahead>
         </div>
-        <div class="cart-button" style="padding-left: 7%; ">
+        <div class="cart-button" style="padding-left: 2%; ">
             <a href="cart" class="btn btn-light">
                 <i class="oi oi-cart"></i>
                 Cart
@@ -52,7 +52,10 @@
                 </NavLink>
             </NotAuthorized>
             <Authorized>
-                <a class="nav-link" @onclick ="Logout" style="cursor: pointer">
+                <NavLink class="nav-link" href="create">
+                    <span class=" oi oi-plus" aria-hidden="true"></span>Create
+                </NavLink>
+                <a class="nav-link" @onclick="Logout" style="cursor: pointer">
                     <span class="oi oi-account-logout" aria-hidden="true"></span>Logout
                 </a>
             </Authorized>

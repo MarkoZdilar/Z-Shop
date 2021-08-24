@@ -160,7 +160,7 @@ using Blazored.Typeahead;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 64 "D:\CSharpSeminarski\ZShop\ZShop\Client\Shared\NavMenu.razor"
+#line 67 "D:\CSharpSeminarski\ZShop\ZShop\Client\Shared\NavMenu.razor"
              
     private Product selectedProduct;
     private bool collapseNavMenu = true;
