@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ZShop.Shared;
+using ZShop.Shared.ProductModels;
 
 namespace ZShop.Server.Services.ProductService
 {
@@ -14,5 +15,8 @@ namespace ZShop.Server.Services.ProductService
         Task<Product> GetProduct(int id);
         Task<List<Product>> CreateProduct(Product product);
         Task<List<Product>> SearchProducts(string searchText);
+        Task<bool> DeleteProduct(int id);
+        Task<bool> UpdateProduct(ProductEditModel productEditModel);
+        Task<AddProductResponse> AddProduct(ProductEditModel productEditModel);
     }
 }

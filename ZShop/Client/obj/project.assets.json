@@ -1430,11 +1430,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CSharpSeminarski\\ZShop\\ZShop\\Client\\ZShop.Client.csproj",
+      "projectUniqueName": "D:\\ProgramiranjeUCSharpu\\Seminar_25_08\\CSharpSeminar\\ZShop\\Client\\ZShop.Client.csproj",
       "projectName": "ZShop.Client",
-      "projectPath": "D:\\CSharpSeminarski\\ZShop\\ZShop\\Client\\ZShop.Client.csproj",
+      "projectPath": "D:\\ProgramiranjeUCSharpu\\Seminar_25_08\\CSharpSeminar\\ZShop\\Client\\ZShop.Client.csproj",
       "packagesPath": "C:\\Users\\Marko Zdilar\\.nuget\\packages\\",
-      "outputPath": "D:\\CSharpSeminarski\\ZShop\\ZShop\\Client\\obj\\",
+      "outputPath": "D:\\ProgramiranjeUCSharpu\\Seminar_25_08\\CSharpSeminar\\ZShop\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -1456,8 +1456,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\CSharpSeminarski\\ZShop\\ZShop\\Shared\\ZShop.Shared.csproj": {
-              "projectPath": "D:\\CSharpSeminarski\\ZShop\\ZShop\\Shared\\ZShop.Shared.csproj"
+            "D:\\ProgramiranjeUCSharpu\\Seminar_25_08\\CSharpSeminar\\ZShop\\Shared\\ZShop.Shared.csproj": {
+              "projectPath": "D:\\ProgramiranjeUCSharpu\\Seminar_25_08\\CSharpSeminar\\ZShop\\Shared\\ZShop.Shared.csproj"
             }
           }
         }

@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using ZShop.Shared;
+using ZShop.Shared.ProductModels;
 
 namespace ZShop.Client.Services.ProductService
 {
@@ -41,6 +44,30 @@ namespace ZShop.Client.Services.ProductService
         public async Task<List<Product>> SearchProducts(string searchText)
         {
             return await _http.GetFromJsonAsync<List<Product>>($"api/Product/Search/{searchText}");
+        }
+
+        public async Task<DeleteProductResponse> DeleteProduct(DeleteProductRequest request)
+        {
+            var deleteProductData = JsonSerializer.Serialize(request);
+            var result = await _http.PostAsync("api/Product/Delete", new StringContent(deleteProductData, Encoding.UTF8, "application/json"));
+
+            return JsonSerializer.Deserialize<DeleteProductResponse>(await result.Content.ReadAsStringAsync(), new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+        }
+
+        public async Task<EditProductResponse> EditProduct(ProductEditModel request)
+        {
+            var editProductReqeust = JsonSerializer.Serialize(request);
+            var result = await _http.PostAsync("api/Product/Edit", new StringContent(editProductReqeust, Encoding.UTF8, "application/json"));
+
+            return JsonSerializer.Deserialize<EditProductResponse>(await result.Content.ReadAsStringAsync(), new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+        }
+
+        public async Task<AddProductResponse> AddProduct(ProductEditModel request)
+        {
+            var editProductReqeust = JsonSerializer.Serialize(request);
+            var result = await _http.PostAsync("api/Product/Add", new StringContent(editProductReqeust, Encoding.UTF8, "application/json"));
+
+            return JsonSerializer.Deserialize<AddProductResponse>(await result.Content.ReadAsStringAsync(), new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
         }
     }
 }

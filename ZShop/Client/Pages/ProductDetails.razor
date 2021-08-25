@@ -2,8 +2,9 @@
 @inject IProductService ProductService
 @inject ILocalStorageService LocalStorage
 @inject IToastService ToastService
-@inject ICartService CartService 
-
+@inject ICartService CartService
+@inject NavigationManager NavigationManager
+@using ZShop.Shared.ProductModels;
 
 <div class="media media-details">
 
@@ -40,6 +41,14 @@
             </div>
         </EditForm>
         <button class="btn btn-primary" @onclick="AddToCart" style="width:40%; text-align:center;"><i class="oi oi-cart">&nbsp;&nbsp;&nbsp;Add to cart</i></button>
+
+        <AuthorizeView Roles="Admin">
+            <Authorized>
+                <button class="btn btn-danger" @onclick="DeleteProduct" style="width:25%; text-align:center;"><i class="oi oi-delete">&nbsp;&nbsp;&nbsp;Delete</i></button>
+                <button class="btn btn-info" @onclick="EditProduct" style="width:25%; text-align:center;"><i class="oi oi-cog">&nbsp;&nbsp;&nbsp;Edit</i></button>
+            </Authorized>
+        </AuthorizeView>
+
         <div class="views">
             <i class="oi oi-eye"></i> @product.Views.ToString("0##")
         </div>
@@ -58,7 +67,7 @@
     protected override async Task OnParametersSetAsync()
     {
         product = await ProductService.GetProduct(Id);
-        if(product.Variants.Count > 0)
+        if (product.Variants.Count > 0)
         {
             currentPlatformId = product.Variants[0].PlatformId; //If there is any platform for selected product, take first as current
         }
@@ -82,5 +91,23 @@
         cartItem.ProductTitle = product.Title;
 
         await CartService.AddToCart(cartItem);
+    }
+
+    private async Task DeleteProduct()
+    {
+        var result = await ProductService.DeleteProduct(new DeleteProductRequest { Id = Id });
+        if (result.Success)
+        {
+            NavigationManager.NavigateTo("/");
+        }
+        else
+        {
+            Console.WriteLine("Error deleting");
+        }
+    }
+
+    private void EditProduct()
+    {
+        NavigationManager.NavigateTo($"/Edit/{Id}");
     }
 }

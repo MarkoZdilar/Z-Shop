@@ -4,8 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ZShop.Server.Attributes;
 using ZShop.Server.Services.ProductService;
 using ZShop.Shared;
+using ZShop.Shared.ProductModels;
 
 namespace ZShop.Server.Controllers
 {
@@ -47,6 +49,33 @@ namespace ZShop.Server.Controllers
         public async Task<IActionResult> CreateProduct(Product product)
         {
             return Ok(await _productService.CreateProduct(product));
+        }
+
+        [HttpPost("Delete")]
+        [TypeFilter(typeof(TokenAuthorize))]
+        public async Task<IActionResult> DeleteProduct([FromBody]DeleteProductRequest request)
+        {
+            var deletionResult = await _productService.DeleteProduct(request.Id);
+
+            return Ok(new DeleteProductResponse { Success = deletionResult });
+        }
+
+        [HttpPost("Edit")]
+        [TypeFilter(typeof(TokenAuthorize))]
+        public async Task<IActionResult> EditProduct([FromBody] ProductEditModel request)
+        {
+            var editResult = await _productService.UpdateProduct(request); 
+
+            return Ok(new EditProductResponse { Success = editResult });
+        }
+
+        [HttpPost("Add")]
+        [TypeFilter(typeof(TokenAuthorize))]
+        public async Task<IActionResult> AddProduct([FromBody] ProductEditModel request)
+        {
+            var addResult = await _productService.AddProduct(request);
+
+            return Ok(new AddProductResponse { Success = addResult.Success, Id = addResult.Id });
         }
     }
 }

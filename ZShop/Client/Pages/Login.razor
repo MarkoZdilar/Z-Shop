@@ -1,30 +1,62 @@
 ﻿@page "/login"
-@inject ILocalStorageService LocalStorage
-@inject NavigationManager NavigationManager 
-@inject AuthenticationStateProvider AuthStateProvider 
+@inject Services.AuthService AuthService
+@inject NavigationManager NavigationManager
 
-<h3 class="title">Login</h3>
+<h1 class="login-title">Login</h1>
 
-<EditForm Model="user" OnSubmit="HandleLogin">
-    <div class="form-group">
-        <label for="username">Username</label>
-        <InputText id="username" @bind-Value="user.Username" class="form-control"/>
+@if (ShowErrors)
+{
+    <div class="alert alert-danger" role="alert">
+        <p>@Error</p>
     </div>
-    <div class="form-group">
-        <label for="password">Password</label>
-        <InputText id="password" @bind-Value="user.Password" type="password" class="form-control"/>
+}
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Please enter your details</h5>
+        <EditForm Model="loginModel" OnValidSubmit="HandleLogin">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <InputText Id="email" Class="form-control" @bind-Value="loginModel.Email" />
+                <ValidationMessage For="@(() => loginModel.Email)" />
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <InputText Id="password" type="password" Class="form-control" @bind-Value="loginModel.Password" />
+                <ValidationMessage For="@(() => loginModel.Password)" />
+            </div>
+            <div class="registration-div">
+                <a class="registration-link" href="/register">Register here!</a>
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </EditForm>
     </div>
-    <button type="submit" class="btn btn-success">Login</button>
-</EditForm>
+</div>
 
 @code {
-    private User user = new User();
 
-    private async void HandleLogin()
+    private LoginModel loginModel = new LoginModel();
+    private bool ShowErrors;
+    private string Error = "";
+
+    private async Task HandleLogin()
     {
-        Console.WriteLine("Log me in!");
-        await LocalStorage.SetItemAsync<string>("username", user.Username);
-        await AuthStateProvider.GetAuthenticationStateAsync(); //By calling this method NotifyAuthenticationStateChanged event would be raised and all components will be alarmed 
-        NavigationManager.NavigateTo("");
+        ShowErrors = false;
+
+        var result = await AuthService.Login(loginModel);
+
+        if (result.Successful)
+        {
+            NavigationManager.NavigateTo("/", true);
+        }
+        else
+        {
+            Error = result.Error;
+            ShowErrors = true;
+        }
     }
+
 }

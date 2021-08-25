@@ -200,13 +200,12 @@
       "mscorlib.dll": "sha256-9AZ7YsJz\/p2gr4E0EQXdHBqwDxoXqtzxhqC6aRsa2K8=",
       "netstandard.dll": "sha256-yOOty6BTX3e57YAEHK5a4nku\/lj0vi7jg\/eQZAjbDQk=",
       "System.Private.CoreLib.dll": "sha256-rraBQp6NevIQiELPVfDFDl5pv9QVJqCiZhB5bkpiZ88=",
-      "ZShop.Shared.dll": "sha256-Qa9Y3tLxfx8PjsMtswfXIXutZ4icn8CkTVYq0vvcr1U=",
-      "ZShop.Client.dll": "sha256-M9\/OvyTOMFXaYqlUxHmbBKFo79Pr06ko\/Nko9S1PqUk="
+      "ZShop.Shared.dll": "sha256-NDvQYackc1jT05EoQmR7xv34tqVzUiDBhb+CHCNgTYo=",
+      "ZShop.Client.dll": "sha256-9BkDHB7zs7\/KUnualMIt2J7qcMh8usZCCoDFV14FVRM="
     },
     "lazyAssembly": null,
     "pdb": {
-      "ZShop.Shared.pdb": "sha256-1AFPSO04lWMn65RdJ6K5AJbA5tJ0h05Z3mZ6CmOx5no=",
-      "ZShop.Client.pdb": "sha256-phi5ht+iIhUh9yitkkWVVicXC7gpnQGiVOAV8MOK\/Y8="
+      "ZShop.Client.pdb": "sha256-X6BXrrdxAuOrEYNyd38FELnZMzRbk+7F7M5kZ2WoxnI="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-L2vkcKzmXJtf+J7db5TbDMBckrgqJ5qc0ZzVIdRlm0I=",

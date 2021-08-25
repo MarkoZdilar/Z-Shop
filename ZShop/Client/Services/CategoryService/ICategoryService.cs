@@ -11,6 +11,5 @@ namespace ZShop.Client.Services.CategoryService
         List<Category> Categories { get; set; }
 
         Task LoadCategories();
-
     }
 }

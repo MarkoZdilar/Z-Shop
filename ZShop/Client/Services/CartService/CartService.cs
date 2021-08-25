@@ -76,6 +76,9 @@ namespace ZShop.Client.Services.CartService
             var cartItem = cart.Find(x => x.ProductId == item.ProductId && x.PlatformId == item.PlatformId); //This combination is composite primary key
             cart.Remove(cartItem);
 
+            var product = await _productService.GetProduct(item.ProductId);
+            _toastService.ShowError(product.Title, "Deleted from cart:");
+
             await _localStorage.SetItemAsync("cart", cart);
             OnChange.Invoke();
         }

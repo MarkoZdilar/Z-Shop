@@ -1,20 +1,66 @@
 ﻿@page "/create"
+@using ZShop.Shared.ProductModels
+@inject IProductService ProductService
+@inject ICategoryService CategoryService
+@inject ZShop.Client.Helper.EditProductState EditProductState
+@inject NavigationManager NavigationManager
+@implements IDisposable
 
-<h3>Add new product</h3>
+@attribute [Authorize(Roles = "Admin")]
 
-<EditForm Model="@newProduct" OnValidSubmit="CreateNewProduct">
+<h3 class="card-title">Add new product</h3>
+
+<EditForm Model="@newProduct" OnValidSubmit="HandleValidSubmit">
     <div class="form-group">
         <label for="title">Title</label>
-        <InputText id="title" @bind-Value="newProduct.Title" class="form-control" />
+        <InputText Class="form-control" style="width: 100%;" @bind-Value="newProduct.Title" />
+        <ValidationMessage For="@(() => newProduct.Title)" />
     </div>
-    <button type="submit" class="btn btn-primary">Create</button>
+    <div class="form-group">
+        <label for="Description">Description</label>
+        <InputTextArea Class="form-control" @bind-Value="newProduct.Description" />
+        <ValidationMessage For="@(() => newProduct.Description)" />
+    </div>
+    <div class="form-group">
+        <label for="Image">Image</label>
+        <InputText Class="form-control" @bind-Value="newProduct.Image" />
+    </div>
+    <div class="form-group">
+        <label for="Category">Category</label>
+        <select @bind="@newProduct.CategoryId" class="form-control">
+            @foreach (var category in CategoryService.Categories)
+            {
+                <option value="@category.Id">@category.Name</option>
+            }
+        </select>
+    </div>
+
+    <VariantOptions ProductVariants="@newProduct.Variants" />
+
+    <button type="submit" class="btn btn-success">Create</button>
 </EditForm>
 
-@code {
-    private Product newProduct = new Product();
 
-    void CreateNewProduct()
+@code {
+    private ProductEditModel newProduct = new ProductEditModel();
+
+    private async Task HandleValidSubmit()
     {
-        Console.WriteLine($"Create that product: {newProduct.Title}!");
+        newProduct.NewVariants = EditProductState.enabledVariantOptions;
+        var response = await ProductService.AddProduct(newProduct);
+        if (response.Success)
+        {
+            NavigationManager.NavigateTo($"/product/{response.Id}");
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        EditProductState.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        EditProductState.OnChange -= StateHasChanged;
     }
 }

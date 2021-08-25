@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mrg3jmUYazgpBlwIszzHhq9iHb/5jK/fkajtb4ZFz07hinwtm8Ln1WgefrSEHaLMUj17IFF76KCshn2Pc4+2zA==",
+  "dgSpecHash": "Zr5DWvq8ko0CU0RvU96cOjoozkw/hKSO0blC2QxidDlw03+cFSZ3/elsGGdZvYTjwtXilEk3UT7Q+Q7Lpr4YRQ==",
   "success": true,
-  "projectFilePath": "D:\\CSharpSeminarski\\ZShop\\ZShop\\Client\\ZShop.Client.csproj",
+  "projectFilePath": "D:\\ProgramiranjeUCSharpu\\Seminar_25_08\\CSharpSeminar\\ZShop\\Client\\ZShop.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Marko Zdilar\\.nuget\\packages\\blazored.localstorage\\4.1.2\\blazored.localstorage.4.1.2.nupkg.sha512",
     "C:\\Users\\Marko Zdilar\\.nuget\\packages\\blazored.toast\\3.1.2\\blazored.toast.3.1.2.nupkg.sha512",

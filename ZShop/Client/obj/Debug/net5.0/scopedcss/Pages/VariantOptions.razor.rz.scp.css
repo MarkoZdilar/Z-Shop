@@ -1,0 +1,26 @@
+VariantOptions.razor
+.form-group[b-443qj1bj8p] {
+    text-align: center;
+}
+
+.variant-title[b-443qj1bj8p] {
+    text-align: center;
+    color: #28A745;
+    margin-top: 3%;
+    margin-bottom: 4%;
+    font-size: 26px;
+}
+
+.platform-name[b-443qj1bj8p] {
+    display: inline-block;
+    width: 13%;
+}
+
+.price-span[b-443qj1bj8p] {
+    margin-right: 2%;
+}
+
+
+.variants-div[b-443qj1bj8p] {
+    padding-left: 7%;
+}

@@ -1,9 +1,11 @@
 ﻿@inject ICategoryService CategoryService
+@inject IPlatformService PlatformService
 @inject ISyncLocalStorageService LocalStorage
-@inject ICartService CartService 
+@inject ICartService CartService
 @inject AuthenticationStateProvider AuthStateProvider
 @inject IProductService ProductService
-@inject NavigationManager NavigationManager  
+@inject NavigationManager NavigationManager
+@inject Services.AuthService AuthService
 @implements IDisposable
 
 
@@ -64,7 +66,7 @@
     </div>
 </nav>
 
-@code {      
+@code {
     private Product selectedProduct;
     private bool collapseNavMenu = true;
 
@@ -75,7 +77,7 @@
         CartService.OnChange += StateHasChanged; //StateHasChanged will be called when OnChange event is invoked(raised)
     }
 
-    public void Dispose()//we need to implement this function because we implement IDisposable interface 
+    public void Dispose()//we need to implement this function because we implement IDisposable interface
     {
         CartService.OnChange -= StateHasChanged;
     }
@@ -88,6 +90,7 @@
     protected override async Task OnInitializedAsync()
     {
         await CategoryService.LoadCategories();
+        await PlatformService.LoadPlatforms();
     }
 
     private int GetProductCount()
@@ -96,10 +99,9 @@
         return cart != null ? cart.Count : 0;
     }
 
-    private void Logout()
+    private async Task Logout()
     {
-        LocalStorage.RemoveItem("username");
-        AuthStateProvider.GetAuthenticationStateAsync(); //Just to refresh and get current auth state.
+        await AuthService.Logout();
     }
 
     private void HandleSearch(Product product)

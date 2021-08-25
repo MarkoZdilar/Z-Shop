@@ -24,7 +24,7 @@ else
         <Authorized>
             <br />
             <br />
-            <h2 style="text-align: center; color: #28A745; font-weight: bold; ">Welcome back, @LocalStorage.GetItemAsString("username").Replace("\"", "")!</h2>
+            <h2 style="text-align: center; color: #28A745; font-weight: bold; ">Welcome back, @context.User.Identity.Name!</h2>
         </Authorized>
     </AuthorizeView>
     <ProductList />

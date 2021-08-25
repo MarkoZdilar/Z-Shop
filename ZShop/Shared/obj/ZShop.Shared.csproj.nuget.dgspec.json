@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CSharpSeminarski\\ZShop\\ZShop\\Shared\\ZShop.Shared.csproj": {}
+    "D:\\ProgramiranjeUCSharpu\\Seminar_25_08\\CSharpSeminar\\ZShop\\Shared\\ZShop.Shared.csproj": {}
   },
   "projects": {
-    "D:\\CSharpSeminarski\\ZShop\\ZShop\\Shared\\ZShop.Shared.csproj": {
+    "D:\\ProgramiranjeUCSharpu\\Seminar_25_08\\CSharpSeminar\\ZShop\\Shared\\ZShop.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CSharpSeminarski\\ZShop\\ZShop\\Shared\\ZShop.Shared.csproj",
+        "projectUniqueName": "D:\\ProgramiranjeUCSharpu\\Seminar_25_08\\CSharpSeminar\\ZShop\\Shared\\ZShop.Shared.csproj",
         "projectName": "ZShop.Shared",
-        "projectPath": "D:\\CSharpSeminarski\\ZShop\\ZShop\\Shared\\ZShop.Shared.csproj",
+        "projectPath": "D:\\ProgramiranjeUCSharpu\\Seminar_25_08\\CSharpSeminar\\ZShop\\Shared\\ZShop.Shared.csproj",
         "packagesPath": "C:\\Users\\Marko Zdilar\\.nuget\\packages\\",
-        "outputPath": "D:\\CSharpSeminarski\\ZShop\\ZShop\\Shared\\obj\\",
+        "outputPath": "D:\\ProgramiranjeUCSharpu\\Seminar_25_08\\CSharpSeminar\\ZShop\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -59,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     }

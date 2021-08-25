@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using ZShop.Shared;
 
 namespace ZShop.Server.Data
 {
-    public class DataContext : DbContext
+    public class DataContext : IdentityDbContext
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
@@ -16,7 +17,6 @@ namespace ZShop.Server.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Platform> Platforms { get; set; }
-
         public DbSet<Stats> Stats { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -454,6 +454,7 @@ namespace ZShop.Server.Data
                     OriginalPrice = 29.99m,
                 }
                 );
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

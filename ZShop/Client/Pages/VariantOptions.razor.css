@@ -1,0 +1,26 @@
+﻿VariantOptions.razor
+.form-group {
+    text-align: center;
+}
+
+.variant-title {
+    text-align: center;
+    color: #28A745;
+    margin-top: 3%;
+    margin-bottom: 4%;
+    font-size: 26px;
+}
+
+.platform-name {
+    display: inline-block;
+    width: 13%;
+}
+
+.price-span {
+    margin-right: 2%;
+}
+
+
+.variants-div {
+    padding-left: 7%;
+}

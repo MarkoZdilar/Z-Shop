@@ -1,0 +1,56 @@
+﻿@inject IPlatformService platformService
+@inject ZShop.Client.Helper.EditProductState EditProductState
+@using System.Linq;
+
+<h3 class="variant-title">Variants</h3>
+
+@if (fullInit == false)
+{
+    <p><em>Loading Variants</em></p>
+}
+else
+{
+    <div class="variants-div">
+        @foreach (var v in enabledVariantOption)
+        {
+            <div class="form-group">
+                <InputCheckbox @onclick="UpdateData" @bind-Value="v.Enabled" class="input-checkbox">Enabled</InputCheckbox> <span class="platform-name"><b>@v.PlatformName</b></span> <span class="price-span">Price: <InputNumber @onblur="UpdateData" @bind-Value="@v.Price"></InputNumber></span><span>Original Price: <InputNumber @onblur="UpdateData" @bind-Value="@v.OriginalPrice"></InputNumber></span>
+            </div>
+        }
+    </div>
+}
+
+
+
+@code {
+    [Parameter]
+    public List<ProductVariant> ProductVariants { get; set; }
+
+    private List<EnabledVariantOption> enabledVariantOption = new();
+
+    bool fullInit = false;
+
+    protected override void OnInitialized()
+    {
+        foreach(var v in platformService.Platforms)
+        {
+            var currentVariant = ProductVariants.FirstOrDefault(o => o.PlatformId == v.Id);
+            if (currentVariant != null)
+            {
+                enabledVariantOption.Add(new EnabledVariantOption { Enabled = true, OriginalPrice = currentVariant.OriginalPrice, PlatformId = v.Id, PlatformName = v.Name, Price = currentVariant.Price });
+            }
+            else
+            {
+                enabledVariantOption.Add(new EnabledVariantOption { Enabled = false, OriginalPrice = 0, PlatformId = v.Id, PlatformName = v.Name, Price = 0 });
+            }
+        }
+
+        EditProductState.SetVariants(enabledVariantOption);
+        fullInit = true;
+    }
+
+    void UpdateData()
+    {
+        EditProductState.SetVariants(enabledVariantOption);
+    }
+}

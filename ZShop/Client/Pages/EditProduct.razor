@@ -1,0 +1,113 @@
+﻿@page "/edit/{id:int}"
+@inject IProductService ProductService
+@inject ICategoryService CategoryService
+@using ZShop.Shared.ProductModels
+
+@inject ZShop.Client.Helper.EditProductState EditProductState
+@implements IDisposable
+
+@attribute [Authorize(Roles = "Admin")]
+
+
+@if (productEditModel == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Editing - @product.Title</h5>
+            <EditForm Model="@productEditModel" OnValidSubmit="@HandleValidSubmit">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <InputText style="width: 100%;" @bind-Value="productEditModel.Title" />
+                    <ValidationMessage For="@(() => productEditModel.Title)" />
+                </div>
+                <div class="form-group">
+                    <label for="Description">Description</label>
+                    <InputTextArea Class="form-control" @bind-Value="productEditModel.Description" rows="7"/>
+                    <ValidationMessage For="@(() => productEditModel.Description)" />
+                </div>
+                <div class="form-group">
+                    <label for="Image">Image</label>
+                    <InputText Class="form-control" @bind-Value="productEditModel.Image" />
+                </div>
+                <div class="form-group">
+                    <label for="Category">Category</label>
+                    <select @bind="@productEditModel.CategoryId" class="form-control">
+                        @foreach (var category in CategoryService.Categories)
+                        {
+                            <option value="@category.Id">@category.Name</option>
+                        }
+                    </select>
+                </div>
+                <hr />
+                <VariantOptions ProductVariants="@productEditModel.Variants" />
+
+
+                <button type="submit" class="btn btn-success">Save</button>
+            </EditForm>
+        </div>
+    </div>
+}
+
+
+@code {
+    private Product product = new Product();
+    private int currentPlatformId = 1;
+
+    [Parameter]
+    public int Id { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        await Reload();
+    }
+
+    private ProductEditModel productEditModel;
+
+    private async Task HandleValidSubmit()
+    {
+        productEditModel.NewVariants = EditProductState.enabledVariantOptions;
+        var response = await ProductService.EditProduct(productEditModel);
+        if (response.Success)
+        {
+            await Reload();
+            StateHasChanged();
+        }
+    }
+
+    async Task Reload()
+    {
+        product = await ProductService.GetProduct(Id);
+        if (product.Variants.Count > 0)
+        {
+            currentPlatformId = product.Variants[0].PlatformId; //If there is any platform for selected product, take first as current
+        }
+
+        productEditModel = new ProductEditModel
+        {
+            Title = product.Title,
+            Description = product.Description,
+            Category = product.Category,
+            CategoryId = product.CategoryId,
+            Id = product.Id,
+            Variants = product.Variants,
+            Image = product.Image
+        };
+    }
+
+    protected override void OnInitialized()
+    {
+        EditProductState.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        EditProductState.OnChange -= StateHasChanged;
+    }
+}
