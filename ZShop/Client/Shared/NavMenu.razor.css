@@ -51,8 +51,21 @@
 }
 
 .search-box {
-    width: 23%; 
-    background-color: white;
+    width: 20%; 
+    background-color: lightgray;
+    margin-left: 38%;
+}
+
+.login-logout {
+    display: inline-block;
+}
+
+.cart-button {
+    margin-left:3%;
+}
+
+.inline {
+    display: inline-block;
 }
 
 @media (min-width: 641px) {

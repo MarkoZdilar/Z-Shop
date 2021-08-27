@@ -167,7 +167,6 @@ using Microsoft.AspNetCore.Authorization;
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
-    [Microsoft.AspNetCore.Components.RouteAttribute("/{categoryurl}")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -176,26 +175,32 @@ using Microsoft.AspNetCore.Authorization;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 37 "D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\Pages\Index.razor"
+#line 44 "D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\Pages\Index.razor"
  
-    [Parameter]
-    public string CategoryUrl { get; set; }
+    private string categoryUrl { get; set; } = null;
 
     private Category category = null;
 
-    protected override async Task OnParametersSetAsync()
-    {
-        await ProductService.LoadProducts(CategoryUrl);
+    private string categoryName = "";
 
-        if (CategoryUrl != null)
+    private async void getProducts(ChangeEventArgs e)
+    {
+        if(e.Value.ToString() == "All Games")
         {
-            category = CategoryService.Categories.FirstOrDefault(c => c.Url.ToLower().Equals(CategoryUrl.ToLower()));
+            await ProductService.LoadProducts(null);
         }
         else
         {
-            category = null;
+            categoryUrl = e.Value.ToString();
+            await ProductService.LoadProducts(categoryUrl);
         }
+        categoryUrl = null;
+    }
 
+    protected override async Task OnParametersSetAsync()
+    {
+        await ProductService.LoadProducts(categoryUrl);
+        category = null;
         await StatsService.IncrementVisits();
         await StatsService.GetVisits();
     }

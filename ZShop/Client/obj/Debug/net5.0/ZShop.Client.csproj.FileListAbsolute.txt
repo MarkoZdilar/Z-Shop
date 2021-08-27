@@ -672,6 +672,4 @@ D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\obj\Debug\net5
 D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\obj\Debug\net5.0\ref\ZShop.Client.dll
 D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\obj\Debug\net5.0\ZShop.Client.pdb
 D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\obj\Debug\net5.0\scopedcss\Pages\VariantOptions.razor.rz.scp.css
-D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\obj\Debug\net5.0\RazorDeclaration\Shared\CategorySelector.razor.g.cs
-D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\obj\Debug\net5.0\Razor\Shared\CategorySelector.razor.g.cs
-D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\obj\Debug\net5.0\scopedcss\Shared\CategorySelector.razor.rz.scp.css
+D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\obj\Debug\net5.0\scopedcss\Pages\Index.razor.rz.scp.css

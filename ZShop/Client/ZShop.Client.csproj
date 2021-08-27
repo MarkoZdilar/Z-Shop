@@ -30,8 +30,4 @@
     <_ContentIncludedByDefault Remove="Pages\CategorySelector.razor" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="Shared\CategorySelector.razor" />
-  </ItemGroup>
-
 </Project>

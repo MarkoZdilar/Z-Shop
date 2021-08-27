@@ -11,12 +11,7 @@
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><h2>Z-Shop</h2></a>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link" id="navigation-link" aria-current="page" href="">All Games</a>
-            </div>
-        </div>
+        <a class="navbar-brand" href="/"><h2>Z-Shop</h2></a>
         <div class="search-box">
             <BlazoredTypeahead SearchMethod="@SearchProduct"
                                TValue="Product"
@@ -36,29 +31,34 @@
                 </NotFoundTemplate>
             </BlazoredTypeahead>
         </div>
-        <div class="cart-button" style="padding-left: 2%; ">
+        <div class="cart-button">
             <a href="cart" class="btn btn-light">
                 <i class="oi oi-cart"></i>
                 Cart
                 <span class="badge badge-pill badge-success">@GetProductCount()</span>
             </a>
         </div>
-        <AuthorizeView>
-            <NotAuthorized>
-                <NavLink class="nav-link" href="login" id="login-link" style="color: #28A745;">
-                    <span class="oi oi-account-login" aria-hidden="true"></span>Login
-                </NavLink>
-            </NotAuthorized>
-            <Authorized>
-                <NavLink class="nav-link" href="create">
-                    <span class=" oi oi-plus" aria-hidden="true"></span>Create
-                </NavLink>
-                <a class="nav-link" @onclick="Logout" style="cursor: pointer">
-                    <span class="oi oi-account-logout" aria-hidden="true"></span>Logout
-                </a>
-            </Authorized>
-
-        </AuthorizeView>
+        <div class="login-logout">
+            <AuthorizeView>
+                <NotAuthorized>
+                    <NavLink class="nav-link" href="login" id="login-link" style="color: #28A745;">
+                        <span class="oi oi-account-login" aria-hidden="true"></span>Login
+                    </NavLink>
+                </NotAuthorized>
+                <Authorized>
+                    <div class="inline">
+                    <NavLink class="nav-link" href="create">
+                        <span class=" oi oi-plus" aria-hidden="true"></span>Create
+                    </NavLink>
+                    </div>
+                    <div class="inline">
+                        <a class="nav-link" @onclick="Logout" style="cursor: pointer">
+                            <span class="oi oi-account-logout" aria-hidden="true"></span>Logout
+                        </a>
+                    </div>
+                </Authorized>
+            </AuthorizeView>
+        </div>
     </div>
 </nav>
 

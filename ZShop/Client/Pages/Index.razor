@@ -1,5 +1,4 @@
 ﻿@page "/"
-@page "/{categoryurl}"
 @inject ICategoryService CategoryService;
 @inject IProductService ProductService;
 @inject ISyncLocalStorageService LocalStorage
@@ -12,8 +11,6 @@
     <br />
     <br />
     <h2 style="text-align: center; color: #28A745; font-weight: bold; ">@category.Name Games</h2>
-    <CategorySelector />
-    <ProductList />
 }
 else
 {
@@ -21,38 +18,54 @@ else
         <NotAuthorized>
             <br />
             <br />
-            <h2 style="text-align: center; color: #28A745; font-weight: bold; ">Welcome to Z-Shop!</h2>
+            <h2 style="text-align: center; color: #28A745;">Welcome to Z-Shop!</h2>
         </NotAuthorized>
         <Authorized>
             <br />
             <br />
-            <h2 style="text-align: center; color: #28A745; font-weight: bold; ">Welcome back, @context.User.Identity.Name!</h2>
+            <h2 style="text-align: center; color: #28A745; ">Welcome back, <i>@context.User.Identity.Name!</i></h2>
         </Authorized>
     </AuthorizeView>
-    <CategorySelector />
-    <ProductList />
 }
+<hr />
+<div class="form-group" style="width: 60%; margin-left: 20%; text-align: center;">
+    <label class="category-label">Choose category:</label>
+    <select class="form-control" style="text-align-last: center;" @onchange="getProducts">
+        <option value="All Games">All Games</option>
+        @foreach (var category in CategoryService.Categories)
+        {
+            <option value="@category.Url">@category.Name</option>
+        }
+    </select>
+</div>
+<ProductList />
 
 @code
 {
-    [Parameter]
-    public string CategoryUrl { get; set; }
+    private string categoryUrl { get; set; } = null;
 
     private Category category = null;
 
-    protected override async Task OnParametersSetAsync()
-    {
-        await ProductService.LoadProducts(CategoryUrl);
+    private string categoryName = "";
 
-        if (CategoryUrl != null)
+    private async void getProducts(ChangeEventArgs e)
+    {
+        if(e.Value.ToString() == "All Games")
         {
-            category = CategoryService.Categories.FirstOrDefault(c => c.Url.ToLower().Equals(CategoryUrl.ToLower()));
+            await ProductService.LoadProducts(null);
         }
         else
         {
-            category = null;
+            categoryUrl = e.Value.ToString();
+            await ProductService.LoadProducts(categoryUrl);
         }
+        categoryUrl = null;
+    }
 
+    protected override async Task OnParametersSetAsync()
+    {
+        await ProductService.LoadProducts(categoryUrl);
+        category = null;
         await StatsService.IncrementVisits();
         await StatsService.GetVisits();
     }

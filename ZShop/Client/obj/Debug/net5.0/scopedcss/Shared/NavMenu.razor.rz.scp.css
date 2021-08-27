@@ -51,8 +51,21 @@
 }
 
 .search-box[b-n4yjmrl9mx] {
-    width: 23%; 
-    background-color: white;
+    width: 20%; 
+    background-color: lightgray;
+    margin-left: 38%;
+}
+
+.login-logout[b-n4yjmrl9mx] {
+    display: inline-block;
+}
+
+.cart-button[b-n4yjmrl9mx] {
+    margin-left:3%;
+}
+
+.inline[b-n4yjmrl9mx] {
+    display: inline-block;
 }
 
 @media (min-width: 641px) {
