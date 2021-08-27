@@ -187,8 +187,6 @@ using System.Linq;
 
     private List<EnabledVariantOption> enabledVariantOption = new();
 
-    bool fullInit = false;
-
     protected override void OnInitialized()
     {
         foreach(var v in platformService.Platforms)
@@ -205,7 +203,6 @@ using System.Linq;
         }
 
         EditProductState.SetVariants(enabledVariantOption);
-        fullInit = true;
     }
 
     void UpdateData()

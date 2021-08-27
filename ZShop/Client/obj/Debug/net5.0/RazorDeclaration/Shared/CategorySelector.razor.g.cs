@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace ZShop.Client.Pages
+namespace ZShop.Client.Shared
 {
     #line hidden
     using System;
@@ -78,6 +78,13 @@ using ZShop.Client;
 #nullable restore
 #line 10 "D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\_Imports.razor"
 using ZShop.Client.Shared;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\_Imports.razor"
+using ZShop.Shared;
 
 #line default
 #line hidden
@@ -159,15 +166,7 @@ using Microsoft.AspNetCore.Authorization;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 2 "D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\Pages\FetchData.razor"
-using ZShop.Shared;
-
-#line default
-#line hidden
-#nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/fetchdata")]
-    public partial class FetchData : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class CategorySelector : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -175,20 +174,35 @@ using ZShop.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\Pages\FetchData.razor"
+#line 18 "D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\Shared\CategorySelector.razor"
        
-    private WeatherForecast[] forecasts;
+    private Category category = null;
+    private string categoryName = "";
+    private void ChangePage(ChangeEventArgs e)
+    {
+        NavigationManager.NavigateTo(e.Value.ToString());
+    }
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");
+        await CategoryService.LoadCategories();
+        StateHasChanged();
+        createCategoryString();
     }
 
+    private void createCategoryString()
+    {
+        categoryName = NavigationManager.Uri.Substring(NavigationManager.Uri.LastIndexOf("/") + 1);
+        if(categoryName != "")
+            categoryName = char.ToUpper(categoryName[0]) + categoryName.Substring(1);
+        Console.WriteLine($"CategoryName:{categoryName}");
+    }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private ICategoryService CategoryService { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }
 #pragma warning restore 1591

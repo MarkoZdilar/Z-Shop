@@ -4,7 +4,7 @@
 
 <h3 class="variant-title">Variants</h3>
 
-@if (fullInit == false)
+@if (enabledVariantOption == null)
 {
     <p><em>Loading Variants</em></p>
 }
@@ -28,8 +28,6 @@ else
 
     private List<EnabledVariantOption> enabledVariantOption = new();
 
-    bool fullInit = false;
-
     protected override void OnInitialized()
     {
         foreach(var v in platformService.Platforms)
@@ -46,7 +44,6 @@ else
         }
 
         EditProductState.SetVariants(enabledVariantOption);
-        fullInit = true;
     }
 
     void UpdateData()

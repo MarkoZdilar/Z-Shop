@@ -1,0 +1,41 @@
+﻿@inject NavigationManager NavigationManager
+@inject ICategoryService CategoryService
+
+<div class="form-group">
+    <select class="form-control" style="text-align-last: center;" @onchange="ChangePage">
+        @if (categoryName == "")
+        {
+            <option hidden>Choose category</option>
+        }
+        <option hidden>@categoryName</option>
+        @foreach (var category in CategoryService.Categories)
+        {
+            <option value="@category.Url">@category.Name</option>
+        }
+    </select>
+</div>
+
+@code {
+    private Category category = null;
+    private string categoryName = "";
+    private void ChangePage(ChangeEventArgs e)
+    {
+        NavigationManager.NavigateTo(e.Value.ToString());
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await CategoryService.LoadCategories();
+        StateHasChanged();
+        createCategoryString();
+    }
+
+    private void createCategoryString()
+    {
+        categoryName = NavigationManager.Uri.Substring(NavigationManager.Uri.LastIndexOf("/") + 1);
+        if(categoryName != "")
+            categoryName = char.ToUpper(categoryName[0]) + categoryName.Substring(1);
+        Console.WriteLine($"CategoryName:{categoryName}");
+    }
+}
+

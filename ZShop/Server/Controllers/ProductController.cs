@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ZShop.Server.Attributes;
 using ZShop.Server.Services.ProductService;
 using ZShop.Shared;
 using ZShop.Shared.ProductModels;
@@ -52,7 +51,6 @@ namespace ZShop.Server.Controllers
         }
 
         [HttpPost("Delete")]
-        [TypeFilter(typeof(TokenAuthorize))]
         public async Task<IActionResult> DeleteProduct([FromBody]DeleteProductRequest request)
         {
             var deletionResult = await _productService.DeleteProduct(request.Id);
@@ -61,7 +59,6 @@ namespace ZShop.Server.Controllers
         }
 
         [HttpPost("Edit")]
-        [TypeFilter(typeof(TokenAuthorize))]
         public async Task<IActionResult> EditProduct([FromBody] ProductEditModel request)
         {
             var editResult = await _productService.UpdateProduct(request); 
@@ -70,7 +67,6 @@ namespace ZShop.Server.Controllers
         }
 
         [HttpPost("Add")]
-        [TypeFilter(typeof(TokenAuthorize))]
         public async Task<IActionResult> AddProduct([FromBody] ProductEditModel request)
         {
             var addResult = await _productService.AddProduct(request);

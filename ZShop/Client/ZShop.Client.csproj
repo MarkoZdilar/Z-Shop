@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\CategorySelector.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Blazored.LocalStorage" Version="4.1.2" />
     <PackageReference Include="Blazored.Toast" Version="3.1.2" />
     <PackageReference Include="Blazored.Typeahead" Version="4.6.0" />
@@ -16,6 +20,18 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Shared\ZShop.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\CategorySelector.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\CategorySelector.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Shared\CategorySelector.razor" />
   </ItemGroup>
 
 </Project>

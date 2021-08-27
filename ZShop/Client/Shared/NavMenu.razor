@@ -14,14 +14,10 @@
         <a class="navbar-brand" href="#"><h2>Z-Shop</h2></a>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link" id="navigation-link" aria-current="page" href="">Home</a>
-                @foreach (var category in CategoryService.Categories)
-                {
-                    <a class="nav-link navigation" id="navigation-link" href="@category.Url">@category.Name</a>
-                }
+                <a class="nav-link" id="navigation-link" aria-current="page" href="">All Games</a>
             </div>
         </div>
-        <div style="width: 10%; background-color: white;">
+        <div class="search-box">
             <BlazoredTypeahead SearchMethod="@SearchProduct"
                                TValue="Product"
                                TItem="Product"

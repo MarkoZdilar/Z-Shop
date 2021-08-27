@@ -174,7 +174,7 @@ using Microsoft.AspNetCore.Authorization;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 69 "D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\Shared\NavMenu.razor"
+#line 65 "D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\Shared\NavMenu.razor"
        
     private Product selectedProduct;
     private bool collapseNavMenu = true;

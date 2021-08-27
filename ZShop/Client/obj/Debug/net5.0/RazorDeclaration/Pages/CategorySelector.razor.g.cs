@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace ZShop.Client.Shared
+namespace ZShop.Client.Pages
 {
     #line hidden
     using System;
@@ -166,57 +166,13 @@ using Microsoft.AspNetCore.Authorization;
 #line default
 #line hidden
 #nullable disable
-    public partial class ProductList : Microsoft.AspNetCore.Components.ComponentBase, IDisposable
+    public partial class CategorySelector : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 29 "D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\Shared\ProductList.razor"
-       
-    protected override void OnInitialized()
-    {
-        ProductService.OnChange += StateHasChanged;
-    }
-
-    public void Dispose()
-    {
-        ProductService.OnChange -= StateHasChanged;
-    }
-
-    private string GetPriceText(Product product)
-    {
-        var variants = product.Variants;
-        if (variants.Count == 0)
-        {
-            return string.Empty;
-        }
-        else if (variants.Count == 1)
-        {
-            return $"{variants[0].Price} €";
-        }
-        decimal minPrice = variants.Min(v => v.Price);
-        return $"Starting at {minPrice} €";
-    }
-
-    private string GetDescription(Product product)
-    {
-        if (product.Description.Length < 260)
-        {
-            return product.Description;
-        }
-        else
-        {
-            return product.Description.Substring(0, 260) + "...";
-        }
-    }
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IProductService ProductService { get; set; }
     }
 }
 #pragma warning restore 1591

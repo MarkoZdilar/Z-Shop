@@ -27,12 +27,8 @@
 
 
 @code {
-    //[Parameter]
-    //public int? CategoryId { get; set; } = null;
-
     protected override void OnInitialized()
     {
-        //await ProductService.LoadProducts();
         ProductService.OnChange += StateHasChanged;
     }
 

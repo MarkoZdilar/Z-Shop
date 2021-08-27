@@ -176,7 +176,7 @@ using Microsoft.AspNetCore.Authorization;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 34 "D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\Pages\Index.razor"
+#line 37 "D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\Pages\Index.razor"
  
     [Parameter]
     public string CategoryUrl { get; set; }
@@ -203,6 +203,7 @@ using Microsoft.AspNetCore.Authorization;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IStatsService StatsService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private ISyncLocalStorageService LocalStorage { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IProductService ProductService { get; set; }

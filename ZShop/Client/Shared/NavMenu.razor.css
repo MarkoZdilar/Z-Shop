@@ -50,6 +50,11 @@
     color: white;
 }
 
+.search-box {
+    width: 23%; 
+    background-color: white;
+}
+
 @media (min-width: 641px) {
     .navbar-toggler {
         display: none;

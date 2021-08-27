@@ -235,6 +235,16 @@ VariantOptions.razor
 .variants-div[b-443qj1bj8p] {
     padding-left: 7%;
 }
+/* /Shared/CategorySelector.razor.rz.scp.css */
+.form-group[b-34912oere6] {
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 2%;
+}
+
+.title-category[b-34912oere6] {
+    text-align: center;
+}
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-b4k0ud0wi4] {
     position: relative;
@@ -357,6 +367,11 @@ VariantOptions.razor
 .nav-item[b-n4yjmrl9mx]  a:hover {
     background-color: rgba(255,255,255,0.1);
     color: white;
+}
+
+.search-box[b-n4yjmrl9mx] {
+    width: 23%; 
+    background-color: white;
 }
 
 @media (min-width: 641px) {
