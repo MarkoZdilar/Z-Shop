@@ -2,7 +2,7 @@
 @using ZShop.Shared.ProductModels
 @inject IProductService ProductService
 @inject ICategoryService CategoryService
-@inject ZShop.Client.Helper.EditProductState EditProductState
+@inject IVariantService VariantService
 @inject NavigationManager NavigationManager
 @implements IDisposable
 
@@ -46,7 +46,7 @@
 
     private async Task HandleValidSubmit()
     {
-        newProduct.NewVariants = EditProductState.enabledVariantOptions;
+        newProduct.Variants = VariantService.GetSelectedVariants();
         var response = await ProductService.AddProduct(newProduct);
         if (response.Success)
         {
@@ -56,11 +56,11 @@
 
     protected override void OnInitialized()
     {
-        EditProductState.OnChange += StateHasChanged;
+        VariantService.OnChange += StateHasChanged;
     }
 
     public void Dispose()
     {
-        EditProductState.OnChange -= StateHasChanged;
+        VariantService.OnChange -= StateHasChanged;
     }
 }

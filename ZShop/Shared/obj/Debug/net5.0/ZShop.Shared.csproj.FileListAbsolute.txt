@@ -10,3 +10,15 @@ D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Shared\obj\Debug\net5
 D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Shared\obj\Debug\net5.0\ZShop.Shared.dll
 D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Shared\obj\Debug\net5.0\ref\ZShop.Shared.dll
 D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Shared\obj\Debug\net5.0\ZShop.Shared.pdb
+D:\Projects\Z-Shop\ZShop\Shared\bin\Debug\net5.0\ZShop.Shared.deps.json
+D:\Projects\Z-Shop\ZShop\Shared\bin\Debug\net5.0\ZShop.Shared.dll
+D:\Projects\Z-Shop\ZShop\Shared\bin\Debug\net5.0\ref\ZShop.Shared.dll
+D:\Projects\Z-Shop\ZShop\Shared\bin\Debug\net5.0\ZShop.Shared.pdb
+D:\Projects\Z-Shop\ZShop\Shared\obj\Debug\net5.0\ZShop.Shared.csprojAssemblyReference.cache
+D:\Projects\Z-Shop\ZShop\Shared\obj\Debug\net5.0\ZShop.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Z-Shop\ZShop\Shared\obj\Debug\net5.0\ZShop.Shared.AssemblyInfoInputs.cache
+D:\Projects\Z-Shop\ZShop\Shared\obj\Debug\net5.0\ZShop.Shared.AssemblyInfo.cs
+D:\Projects\Z-Shop\ZShop\Shared\obj\Debug\net5.0\ZShop.Shared.csproj.CoreCompileInputs.cache
+D:\Projects\Z-Shop\ZShop\Shared\obj\Debug\net5.0\ZShop.Shared.dll
+D:\Projects\Z-Shop\ZShop\Shared\obj\Debug\net5.0\ref\ZShop.Shared.dll
+D:\Projects\Z-Shop\ZShop\Shared\obj\Debug\net5.0\ZShop.Shared.pdb

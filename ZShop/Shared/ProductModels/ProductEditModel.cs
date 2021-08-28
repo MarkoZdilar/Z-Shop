@@ -14,7 +14,6 @@ namespace ZShop.Shared.ProductModels
         public Category Category { get; set; }
         public int CategoryId { get; set; }
         public List<ProductVariant> Variants { get; set; } = new List<ProductVariant>();
-        public List<EnabledVariantOption> NewVariants { get; set; } = new List<EnabledVariantOption>();
         public int Views { get; set; }
     }
 }

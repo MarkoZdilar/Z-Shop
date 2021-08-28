@@ -6,13 +6,13 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
-using ZShop.Client.Helper;
 using ZShop.Client.Services;
 using ZShop.Client.Services.CartService;
 using ZShop.Client.Services.CategoryService;
 using ZShop.Client.Services.PlatformService;
 using ZShop.Client.Services.ProductService;
 using ZShop.Client.Services.StatsService;
+using ZShop.Client.Services.VariantService;
 
 namespace ZShop.Client
 {
@@ -30,7 +30,7 @@ namespace ZShop.Client
             builder.Services.AddScoped<ICartService, CartService>();
             builder.Services.AddScoped<IStatsService, StatsService>();
             builder.Services.AddScoped<IPlatformService, PlatformService>();
-            builder.Services.AddScoped<EditProductState>();
+            builder.Services.AddScoped<IVariantService, VariantService>();
             builder.Services.AddBlazoredLocalStorage();
             builder.Services.AddBlazoredToast();
             builder.Services.AddOptions();

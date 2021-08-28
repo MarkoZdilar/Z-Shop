@@ -1,6 +1,6 @@
 ﻿<StaticWebAssets Version="1.0">
-  <ContentRoot BasePath="/" Path="D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\bin\Debug\net5.0\wwwroot\" />
-  <ContentRoot BasePath="/" Path="D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\obj\Debug\net5.0\scopedcss\bundle\" />
-  <ContentRoot BasePath="_content/Blazored.Toast" Path="C:\Users\Marko Zdilar\.nuget\packages\blazored.toast\3.1.2\build\..\staticwebassets\" />
-  <ContentRoot BasePath="_content/Blazored.Typeahead" Path="C:\Users\Marko Zdilar\.nuget\packages\blazored.typeahead\4.6.0\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/" Path="D:\Projects\Z-Shop\ZShop\Client\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="D:\Projects\Z-Shop\ZShop\Client\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="_content/Blazored.Toast" Path="C:\Users\Branimir\.nuget\packages\blazored.toast\3.1.2\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/Blazored.Typeahead" Path="C:\Users\Branimir\.nuget\packages\blazored.typeahead\4.6.0\build\..\staticwebassets\" />
 </StaticWebAssets>

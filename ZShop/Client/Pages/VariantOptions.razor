@@ -1,5 +1,5 @@
 ﻿@inject IPlatformService platformService
-@inject ZShop.Client.Helper.EditProductState EditProductState
+@inject IVariantService VariantService
 @using System.Linq;
 
 <h3 class="variant-title">Variants</h3>
@@ -26,7 +26,7 @@ else
     [Parameter]
     public List<ProductVariant> ProductVariants { get; set; }
 
-    private List<EnabledVariantOption> enabledVariantOption = new();
+    private List<VariantOption> enabledVariantOption = new();
 
     protected override void OnInitialized()
     {
@@ -35,19 +35,19 @@ else
             var currentVariant = ProductVariants.FirstOrDefault(o => o.PlatformId == v.Id);
             if (currentVariant != null)
             {
-                enabledVariantOption.Add(new EnabledVariantOption { Enabled = true, OriginalPrice = currentVariant.OriginalPrice, PlatformId = v.Id, PlatformName = v.Name, Price = currentVariant.Price });
+                enabledVariantOption.Add(new VariantOption { Enabled = true, OriginalPrice = currentVariant.OriginalPrice, PlatformId = v.Id, PlatformName = v.Name, Price = currentVariant.Price });
             }
             else
             {
-                enabledVariantOption.Add(new EnabledVariantOption { Enabled = false, OriginalPrice = 0, PlatformId = v.Id, PlatformName = v.Name, Price = 0 });
+                enabledVariantOption.Add(new VariantOption { Enabled = false, OriginalPrice = 0, PlatformId = v.Id, PlatformName = v.Name, Price = 0 });
             }
         }
 
-        EditProductState.SetVariants(enabledVariantOption);
+        VariantService.SetVariants(enabledVariantOption);
     }
 
     void UpdateData()
     {
-        EditProductState.SetVariants(enabledVariantOption);
+        VariantService.SetVariants(enabledVariantOption);
     }
 }

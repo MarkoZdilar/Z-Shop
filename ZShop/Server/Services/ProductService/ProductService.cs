@@ -95,18 +95,16 @@ namespace ZShop.Server.Services.ProductService
             product.Description = productEditModel.Description;
             product.Image = productEditModel.Image;
             product.DateUpdated = DateTime.Now;
-            product.Variants.Clear();
 
-            foreach (var v in productEditModel.NewVariants.Where(o => o.Enabled == true))
-            {
-                product.Variants.Add(new ProductVariant { OriginalPrice = v.OriginalPrice, PlatformId = v.PlatformId, Price = v.Price, ProductId = product.Id });
-            }
+            product.Variants.Clear();
+            product.Variants.AddRange(productEditModel.Variants);
+
 
             try
             {
                 await _context.SaveChangesAsync();
             }
-            catch(Exception ex)
+            catch
             {
                 return false;
             }
@@ -121,20 +119,16 @@ namespace ZShop.Server.Services.ProductService
                 Title = productEditModel.Title,
                 DateCreated = DateTime.Now,
                 Image = productEditModel.Image,
-                Description = productEditModel.Description
+                Description = productEditModel.Description,
+                Variants = productEditModel.Variants
             };
-
-            foreach (var v in productEditModel.NewVariants.Where(o => o.Enabled == true))
-            {
-                product.Variants.Add(new ProductVariant { OriginalPrice = v.OriginalPrice, PlatformId = v.PlatformId, Price = v.Price});
-            }
 
             try
             {
                 await _context.Products.AddAsync(product);
                 await _context.SaveChangesAsync();
             }
-            catch (Exception ex)
+            catch
             {
                 return new AddProductResponse { Success = false };
             }

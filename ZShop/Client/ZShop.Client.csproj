@@ -30,4 +30,8 @@
     <_ContentIncludedByDefault Remove="Pages\CategorySelector.razor" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Helper\" />
+  </ItemGroup>
+
 </Project>

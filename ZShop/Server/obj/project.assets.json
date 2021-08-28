@@ -5480,7 +5480,7 @@
       ]
     },
     "System.Security.Cryptography.Cng/4.5.0": {
-      "sha512": "WG3r7EyjUe9CMPFSs6bty5doUqT+q9pbI80hlNzo2SkPkZ4VTuZkGWjpp77JB8+uaL4DFPRdBsAY+DX3dBK92A==",
+      "sha512": "DsHSZoBeVe2bAknPwdrgnCQlgd80XRcS8V3ev952BF8ZE4jUi2i7+tIaFth6md9nure1SJL2hfQt4IgjpNybxQ==",
       "type": "package",
       "path": "system.security.cryptography.cng/4.5.0",
       "files": [
@@ -6452,27 +6452,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Marko Zdilar\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Users\\Branimir\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ProgramiranjeUCSharpu\\Seminar_25_08\\CSharpSeminar\\ZShop\\Server\\ZShop.Server.csproj",
+      "projectUniqueName": "D:\\Projects\\Z-Shop\\ZShop\\Server\\ZShop.Server.csproj",
       "projectName": "ZShop.Server",
-      "projectPath": "D:\\ProgramiranjeUCSharpu\\Seminar_25_08\\CSharpSeminar\\ZShop\\Server\\ZShop.Server.csproj",
-      "packagesPath": "C:\\Users\\Marko Zdilar\\.nuget\\packages\\",
-      "outputPath": "D:\\ProgramiranjeUCSharpu\\Seminar_25_08\\CSharpSeminar\\ZShop\\Server\\obj\\",
+      "projectPath": "D:\\Projects\\Z-Shop\\ZShop\\Server\\ZShop.Server.csproj",
+      "packagesPath": "C:\\Users\\Branimir\\.nuget\\packages\\",
+      "outputPath": "D:\\Projects\\Z-Shop\\ZShop\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Marko Zdilar\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Branimir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -6485,11 +6485,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\ProgramiranjeUCSharpu\\Seminar_25_08\\CSharpSeminar\\ZShop\\Client\\ZShop.Client.csproj": {
-              "projectPath": "D:\\ProgramiranjeUCSharpu\\Seminar_25_08\\CSharpSeminar\\ZShop\\Client\\ZShop.Client.csproj"
+            "D:\\Projects\\Z-Shop\\ZShop\\Client\\ZShop.Client.csproj": {
+              "projectPath": "D:\\Projects\\Z-Shop\\ZShop\\Client\\ZShop.Client.csproj"
             },
-            "D:\\ProgramiranjeUCSharpu\\Seminar_25_08\\CSharpSeminar\\ZShop\\Shared\\ZShop.Shared.csproj": {
-              "projectPath": "D:\\ProgramiranjeUCSharpu\\Seminar_25_08\\CSharpSeminar\\ZShop\\Shared\\ZShop.Shared.csproj"
+            "D:\\Projects\\Z-Shop\\ZShop\\Shared\\ZShop.Shared.csproj": {
+              "projectPath": "D:\\Projects\\Z-Shop\\ZShop\\Shared\\ZShop.Shared.csproj"
             }
           }
         }
@@ -6559,7 +6559,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   }

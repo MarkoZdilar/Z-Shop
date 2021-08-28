@@ -1,6 +1,6 @@
-﻿namespace ZShop.Shared
+﻿namespace ZShop.Client.Services.VariantService
 {
-    public class EnabledVariantOption
+    public class VariantOption
     {
         public bool Enabled { get; set; }
         public int PlatformId { get; set; }

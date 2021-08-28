@@ -8,27 +8,27 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Marko Zdilar\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Users\\Branimir\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ProgramiranjeUCSharpu\\Seminar_25_08\\CSharpSeminar\\ZShop\\Shared\\ZShop.Shared.csproj",
+      "projectUniqueName": "D:\\Projects\\Z-Shop\\ZShop\\Shared\\ZShop.Shared.csproj",
       "projectName": "ZShop.Shared",
-      "projectPath": "D:\\ProgramiranjeUCSharpu\\Seminar_25_08\\CSharpSeminar\\ZShop\\Shared\\ZShop.Shared.csproj",
-      "packagesPath": "C:\\Users\\Marko Zdilar\\.nuget\\packages\\",
-      "outputPath": "D:\\ProgramiranjeUCSharpu\\Seminar_25_08\\CSharpSeminar\\ZShop\\Shared\\obj\\",
+      "projectPath": "D:\\Projects\\Z-Shop\\ZShop\\Shared\\ZShop.Shared.csproj",
+      "packagesPath": "C:\\Users\\Branimir\\.nuget\\packages\\",
+      "outputPath": "D:\\Projects\\Z-Shop\\ZShop\\Shared\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Marko Zdilar\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Branimir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -67,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   }
