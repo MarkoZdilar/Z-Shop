@@ -1423,27 +1423,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Branimir\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\Marko Zdilar\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\Z-Shop\\ZShop\\Client\\ZShop.Client.csproj",
+      "projectUniqueName": "D:\\Z-Shop\\Z-Shop23\\ZShop\\Client\\ZShop.Client.csproj",
       "projectName": "ZShop.Client",
-      "projectPath": "D:\\Projects\\Z-Shop\\ZShop\\Client\\ZShop.Client.csproj",
-      "packagesPath": "C:\\Users\\Branimir\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\Z-Shop\\ZShop\\Client\\obj\\",
+      "projectPath": "D:\\Z-Shop\\Z-Shop23\\ZShop\\Client\\ZShop.Client.csproj",
+      "packagesPath": "C:\\Users\\Marko Zdilar\\.nuget\\packages\\",
+      "outputPath": "D:\\Z-Shop\\Z-Shop23\\ZShop\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Branimir\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Marko Zdilar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -1456,8 +1456,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Projects\\Z-Shop\\ZShop\\Shared\\ZShop.Shared.csproj": {
-              "projectPath": "D:\\Projects\\Z-Shop\\ZShop\\Shared\\ZShop.Shared.csproj"
+            "D:\\Z-Shop\\Z-Shop23\\ZShop\\Shared\\ZShop.Shared.csproj": {
+              "projectPath": "D:\\Z-Shop\\Z-Shop23\\ZShop\\Shared\\ZShop.Shared.csproj"
             }
           }
         }
@@ -1515,7 +1515,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.NETCore.App.Runtime.browser-wasm",
-            "version": "[5.0.4, 5.0.4]"
+            "version": "[5.0.9, 5.0.9]"
           }
         ],
         "frameworkReferences": {
@@ -1523,7 +1523,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

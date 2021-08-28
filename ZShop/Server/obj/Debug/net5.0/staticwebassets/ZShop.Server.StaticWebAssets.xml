@@ -1,8 +1,8 @@
 ﻿<StaticWebAssets Version="1.0">
-  <ContentRoot BasePath="/" Path="D:\Projects\Z-Shop\ZShop\Client\bin\Debug\net5.0\wwwroot\" />
-  <ContentRoot BasePath="/" Path="D:\Projects\Z-Shop\ZShop\Client\obj\Debug\net5.0\scopedcss\bundle\" />
-  <ContentRoot BasePath="/" Path="D:\Projects\Z-Shop\ZShop\Client\wwwroot\" />
-  <ContentRoot BasePath="/Identity" Path="C:\Users\Branimir\.nuget\packages\microsoft.aspnetcore.identity.ui\5.0.8\staticwebassets\V4\" />
-  <ContentRoot BasePath="_content/Blazored.Toast" Path="C:\Users\Branimir\.nuget\packages\blazored.toast\3.1.2\build\..\staticwebassets\" />
-  <ContentRoot BasePath="_content/Blazored.Typeahead" Path="C:\Users\Branimir\.nuget\packages\blazored.typeahead\4.6.0\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/" Path="D:\Z-Shop\Z-Shop23\ZShop\Client\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="D:\Z-Shop\Z-Shop23\ZShop\Client\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="/" Path="D:\Z-Shop\Z-Shop23\ZShop\Client\wwwroot\" />
+  <ContentRoot BasePath="/Identity" Path="C:\Users\Marko Zdilar\.nuget\packages\microsoft.aspnetcore.identity.ui\5.0.8\staticwebassets\V4\" />
+  <ContentRoot BasePath="_content/Blazored.Toast" Path="C:\Users\Marko Zdilar\.nuget\packages\blazored.toast\3.1.2\build\..\staticwebassets\" />
+  <ContentRoot BasePath="_content/Blazored.Typeahead" Path="C:\Users\Marko Zdilar\.nuget\packages\blazored.typeahead\4.6.0\build\..\staticwebassets\" />
 </StaticWebAssets>

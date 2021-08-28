@@ -22,3 +22,15 @@ D:\Projects\Z-Shop\ZShop\Shared\obj\Debug\net5.0\ZShop.Shared.csproj.CoreCompile
 D:\Projects\Z-Shop\ZShop\Shared\obj\Debug\net5.0\ZShop.Shared.dll
 D:\Projects\Z-Shop\ZShop\Shared\obj\Debug\net5.0\ref\ZShop.Shared.dll
 D:\Projects\Z-Shop\ZShop\Shared\obj\Debug\net5.0\ZShop.Shared.pdb
+D:\Z-Shop\Z-Shop23\ZShop\Shared\obj\Debug\net5.0\ZShop.Shared.dll
+D:\Z-Shop\Z-Shop23\ZShop\Shared\obj\Debug\net5.0\ref\ZShop.Shared.dll
+D:\Z-Shop\Z-Shop23\ZShop\Shared\obj\Debug\net5.0\ZShop.Shared.pdb
+D:\Z-Shop\Z-Shop23\ZShop\Shared\bin\Debug\net5.0\ZShop.Shared.deps.json
+D:\Z-Shop\Z-Shop23\ZShop\Shared\bin\Debug\net5.0\ZShop.Shared.dll
+D:\Z-Shop\Z-Shop23\ZShop\Shared\bin\Debug\net5.0\ref\ZShop.Shared.dll
+D:\Z-Shop\Z-Shop23\ZShop\Shared\bin\Debug\net5.0\ZShop.Shared.pdb
+D:\Z-Shop\Z-Shop23\ZShop\Shared\obj\Debug\net5.0\ZShop.Shared.csproj.AssemblyReference.cache
+D:\Z-Shop\Z-Shop23\ZShop\Shared\obj\Debug\net5.0\ZShop.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\Z-Shop\Z-Shop23\ZShop\Shared\obj\Debug\net5.0\ZShop.Shared.AssemblyInfoInputs.cache
+D:\Z-Shop\Z-Shop23\ZShop\Shared\obj\Debug\net5.0\ZShop.Shared.AssemblyInfo.cs
+D:\Z-Shop\Z-Shop23\ZShop\Shared\obj\Debug\net5.0\ZShop.Shared.csproj.CoreCompileInputs.cache

@@ -36,10 +36,6 @@
 {
     private string categoryUrl { get; set; } = null;
 
-    private Category category = null;
-
-    private string categoryName = "";
-
     private async void getProducts(ChangeEventArgs e)
     {
         if(e.Value.ToString() == "All Games")
@@ -57,7 +53,6 @@
     protected override async Task OnParametersSetAsync()
     {
         await ProductService.LoadProducts(categoryUrl);
-        category = null;
         await StatsService.IncrementVisits();
         await StatsService.GetVisits();
     }

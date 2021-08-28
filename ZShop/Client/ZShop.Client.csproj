@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Helper\**" />
+    <Content Remove="Helper\**" />
+    <EmbeddedResource Remove="Helper\**" />
+    <None Remove="Helper\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Pages\CategorySelector.razor" />
   </ItemGroup>
 
@@ -28,10 +35,6 @@
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Pages\CategorySelector.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Helper\" />
   </ItemGroup>
 
 </Project>
