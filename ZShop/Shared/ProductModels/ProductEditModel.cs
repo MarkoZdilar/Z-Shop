@@ -11,7 +11,6 @@ namespace ZShop.Shared.ProductModels
         [Required]
         public string Description { get; set; }
         public string Image { get; set; }
-        public bool IsPublic { get; set; }
         public Category Category { get; set; }
         public int CategoryId { get; set; }
         public List<ProductVariant> Variants { get; set; } = new List<ProductVariant>();

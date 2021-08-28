@@ -368,15 +368,11 @@ VariantOptions.razor
 .search-box[b-n4yjmrl9mx] {
     width: 20%; 
     background-color: lightgray;
-    margin-left: 38%;
+    margin-left: 43%;
 }
 
 .login-logout[b-n4yjmrl9mx] {
     display: inline-block;
-}
-
-.cart-button[b-n4yjmrl9mx] {
-    margin-left:3%;
 }
 
 .inline[b-n4yjmrl9mx] {

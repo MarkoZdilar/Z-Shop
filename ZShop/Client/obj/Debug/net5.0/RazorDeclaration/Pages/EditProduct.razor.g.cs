@@ -167,14 +167,14 @@ using Microsoft.AspNetCore.Authorization;
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\Pages\EditProduct.razor"
+#line 5 "D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\Pages\EditProduct.razor"
 using ZShop.Shared.ProductModels;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\Pages\EditProduct.razor"
+#line 10 "D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\Pages\EditProduct.razor"
            [Authorize(Roles = "Admin")]
 
 #line default
@@ -189,20 +189,18 @@ using ZShop.Shared.ProductModels;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 59 "D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\Pages\EditProduct.razor"
+#line 60 "D:\ProgramiranjeUCSharpu\Seminar_25_08\CSharpSeminar\ZShop\Client\Pages\EditProduct.razor"
        
-    private Product product = new Product();
-    private int currentPlatformId = 1;
-
     [Parameter]
     public int Id { get; set; }
+    private Product product = new Product();
+    private int currentPlatformId = 1;
+    private ProductEditModel productEditModel;
 
     protected override async Task OnParametersSetAsync()
     {
         await Reload();
     }
-
-    private ProductEditModel productEditModel;
 
     private async Task HandleValidSubmit()
     {
@@ -213,6 +211,7 @@ using ZShop.Shared.ProductModels;
             await Reload();
             StateHasChanged();
         }
+        NavigationManager.NavigateTo("/");
     }
 
     async Task Reload()
@@ -249,6 +248,7 @@ using ZShop.Shared.ProductModels;
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private ZShop.Client.Helper.EditProductState EditProductState { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private ICategoryService CategoryService { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IProductService ProductService { get; set; }
     }

@@ -1,6 +1,7 @@
 ﻿@page "/edit/{id:int}"
 @inject IProductService ProductService
 @inject ICategoryService CategoryService
+@inject NavigationManager NavigationManager
 @using ZShop.Shared.ProductModels
 
 @inject ZShop.Client.Helper.EditProductState EditProductState
@@ -57,18 +58,16 @@ else
 
 
 @code {
-    private Product product = new Product();
-    private int currentPlatformId = 1;
-
     [Parameter]
     public int Id { get; set; }
+    private Product product = new Product();
+    private int currentPlatformId = 1;
+    private ProductEditModel productEditModel;
 
     protected override async Task OnParametersSetAsync()
     {
         await Reload();
     }
-
-    private ProductEditModel productEditModel;
 
     private async Task HandleValidSubmit()
     {
@@ -79,6 +78,7 @@ else
             await Reload();
             StateHasChanged();
         }
+        NavigationManager.NavigateTo("/");
     }
 
     async Task Reload()

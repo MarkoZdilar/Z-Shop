@@ -27,11 +27,11 @@ namespace ZShop.Server.Data
             modelBuilder.Entity<Category>().HasData(
                     new Category { Id = 1, Name = "Action", Url = "action" },
                     new Category { Id = 2, Name = "Adventure", Url = "adventure" },
-                    new Category { Id = 3, Name = "Rpg", Url = "rpg" },
+                    new Category { Id = 3, Name = "RPG", Url = "rpg" },
                     new Category { Id = 4, Name = "Simulation", Url = "simulation" },
                     new Category { Id = 5, Name = "Strategy", Url = "strategy" },
                     new Category { Id = 6, Name = "Sports", Url = "sports" },
-                    new Category { Id = 7, Name = "Platform", Url = "platform" }
+                    new Category { Id = 7, Name = "Platformers", Url = "platformers" }
             );
 
             modelBuilder.Entity<Product>().HasData(

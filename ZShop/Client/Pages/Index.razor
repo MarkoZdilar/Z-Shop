@@ -6,28 +6,20 @@
 @inject NavigationManager NavigationManager
 
 
-@if (category != null)
-{
-    <br />
-    <br />
-    <h2 style="text-align: center; color: #28A745; font-weight: bold; ">@category.Name Games</h2>
-}
-else
-{
-    <AuthorizeView>
-        <NotAuthorized>
-            <br />
-            <br />
-            <h2 style="text-align: center; color: #28A745;">Welcome to Z-Shop!</h2>
-        </NotAuthorized>
-        <Authorized>
-            <br />
-            <br />
-            <h2 style="text-align: center; color: #28A745; ">Welcome back, <i>@context.User.Identity.Name!</i></h2>
-        </Authorized>
-    </AuthorizeView>
-}
+<AuthorizeView>
+    <NotAuthorized>
+        <br />
+        <br />
+        <h2 style="text-align: center; color: #28A745;">Welcome to Z-Shop!</h2>
+    </NotAuthorized>
+    <Authorized>
+        <br />
+        <br />
+        <h2 style="text-align: center; color: #28A745; ">Welcome back, <i>@context.User.Identity.Name!</i></h2>
+    </Authorized>
+</AuthorizeView>
 <hr />
+
 <div class="form-group" style="width: 60%; margin-left: 20%; text-align: center;">
     <label class="category-label">Choose category:</label>
     <select class="form-control" style="text-align-last: center;" @onchange="getProducts">

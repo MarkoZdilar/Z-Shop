@@ -10,8 +10,6 @@ namespace ZShop.Shared
 {
     public class ProductVariant
     {
-        [JsonIgnore]
-        public Product Product { get; set; }
         public int ProductId { get; set; }
         public Platform Platform { get; set; }
         public int PlatformId { get; set; }

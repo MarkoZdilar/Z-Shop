@@ -53,15 +53,11 @@
 .search-box {
     width: 20%; 
     background-color: lightgray;
-    margin-left: 38%;
+    margin-left: 43%;
 }
 
 .login-logout {
     display: inline-block;
-}
-
-.cart-button {
-    margin-left:3%;
 }
 
 .inline {
