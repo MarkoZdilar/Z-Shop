@@ -9,12 +9,10 @@ namespace ZShop.Client.Services.VariantService
     {
         public List<VariantOption> EnabledVariantOptions { get; private set; }
 
-        public event Action OnChange;
 
         public void SetVariants(List<VariantOption> variants)
         {
             EnabledVariantOptions = variants;
-            NotifyStateChanged(); //Servis je isti i za child i za parent, dobiju isti objekt - sluzi za komunikaciju izmedju child i parent 
         }
 
         public List<ProductVariant> GetSelectedVariants()
@@ -25,6 +23,5 @@ namespace ZShop.Client.Services.VariantService
                 .ToList();
         }
 
-        private void NotifyStateChanged() => OnChange?.Invoke();
     }
 }

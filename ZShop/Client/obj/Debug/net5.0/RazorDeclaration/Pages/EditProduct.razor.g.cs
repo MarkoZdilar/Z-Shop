@@ -181,14 +181,14 @@ using ZShop.Shared.ProductModels;
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "D:\Z-Shop\Z-Shop23\ZShop\Client\Pages\EditProduct.razor"
+#line 8 "D:\Z-Shop\Z-Shop23\ZShop\Client\Pages\EditProduct.razor"
            [Authorize(Roles = "Admin")]
 
 #line default
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/edit/{id:int}")]
-    public partial class EditProduct : Microsoft.AspNetCore.Components.ComponentBase, IDisposable
+    public partial class EditProduct : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -196,7 +196,7 @@ using ZShop.Shared.ProductModels;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 59 "D:\Z-Shop\Z-Shop23\ZShop\Client\Pages\EditProduct.razor"
+#line 57 "D:\Z-Shop\Z-Shop23\ZShop\Client\Pages\EditProduct.razor"
        
     [Parameter]
     public int Id { get; set; }
@@ -227,16 +227,6 @@ using ZShop.Shared.ProductModels;
         {
             NavigationManager.NavigateTo($"/product/{Id}");
         }
-    }
-
-    protected override void OnInitialized()
-    {
-        VariantService.OnChange += StateHasChanged;
-    }
-
-    public void Dispose()
-    {
-        VariantService.OnChange -= StateHasChanged;
     }
 
 #line default

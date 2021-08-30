@@ -4,7 +4,6 @@
 @inject ICategoryService CategoryService
 @inject IVariantService VariantService
 @inject NavigationManager NavigationManager
-@implements IDisposable
 
 @attribute [Authorize(Roles = "Admin")]
 
@@ -53,15 +52,5 @@
         {
             NavigationManager.NavigateTo($"/product/{response.Id}");
         }
-    }
-
-    protected override void OnInitialized()
-    {
-        VariantService.OnChange += StateHasChanged;
-    }
-
-    public void Dispose()
-    {
-        VariantService.OnChange -= StateHasChanged;
     }
 }
