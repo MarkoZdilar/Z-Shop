@@ -44,7 +44,7 @@ namespace ZShop.Server.Services.ProductService
 
         public async Task<List<Product>> GetAllProducts()
         {
-            return await _context.Products.ToListAsync();
+            return await _context.Products.Include(p => p.Variants).ToListAsync();
         }
 
         public async Task<Product> GetProduct(int id)
