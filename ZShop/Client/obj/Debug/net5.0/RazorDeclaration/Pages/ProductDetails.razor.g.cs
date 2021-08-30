@@ -204,7 +204,7 @@ using ZShop.Shared.ProductModels;
         product = await ProductService.GetProduct(Id);
         if (product.Variants.Count > 0)
         {
-            currentPlatformId = product.Variants[0].PlatformId; //If there is any platform for selected product, take first as current
+            currentPlatformId = product.Variants[0].PlatformId;
         }
     }
 

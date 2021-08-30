@@ -10,8 +10,6 @@ namespace ZShop.Server.Controllers
     [ApiController]
     public class AccountsController : ControllerBase
     {
-        private static UserModel LoggedOutUser = new UserModel { IsAuthenticated = false };
-
         private readonly UserManager<IdentityUser> _userManager;
 
         public AccountsController(UserManager<IdentityUser> userManager)

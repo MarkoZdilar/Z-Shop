@@ -53,16 +53,17 @@ else
             </tr>
         </thead>
         <tbody>
-            @for(int i = 0; i < cartItems.Count; i++)
+            @for (int i = 0; i < cartItems.Count; i++)
             {
-            <tr>
-                <th scope="row">@(i+1).</th>
-                <td>@cartItems[i].ProductTitle</td>
-                <td>@cartItems[i].PlatformName</td>
-                <td>@cartItems[i].Quantity</td>
-                <td>@(cartItems[i].Price * @cartItems[i].Quantity) €</td>
-            </tr>
-
+                if (cartItems[i].Quantity <= 0)
+                    cartItems[i].Quantity = 1;
+                <tr>
+                    <th scope="row">@(i+1).</th>
+                    <td>@cartItems[i].ProductTitle</td>
+                    <td>@cartItems[i].PlatformName</td>
+                    <td>@cartItems[i].Quantity</td>
+                    <td>@(cartItems[i].Price * @cartItems[i].Quantity) €</td>
+                </tr>
             }
         </tbody>
     </table>

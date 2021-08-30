@@ -187,7 +187,7 @@ using System.Linq;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 25 "D:\Z-Shop\Z-Shop23\ZShop\Client\Pages\VariantOptions.razor"
+#line 29 "D:\Z-Shop\Z-Shop23\ZShop\Client\Pages\VariantOptions.razor"
        
     [Parameter]
     public List<ProductVariant> ProductVariants { get; set; }
@@ -196,16 +196,16 @@ using System.Linq;
 
     protected override void OnInitialized()
     {
-        foreach(var v in platformService.Platforms)
+        foreach(var p in platformService.Platforms)
         {
-            var currentVariant = ProductVariants.FirstOrDefault(o => o.PlatformId == v.Id);
+            var currentVariant = ProductVariants.FirstOrDefault(o => o.PlatformId == p.Id);
             if (currentVariant != null)
             {
-                enabledVariantOption.Add(new VariantOption { Enabled = true, OriginalPrice = currentVariant.OriginalPrice, PlatformId = v.Id, PlatformName = v.Name, Price = currentVariant.Price });
+                enabledVariantOption.Add(new VariantOption { Enabled = true, OriginalPrice = currentVariant.OriginalPrice, PlatformId = p.Id, PlatformName = p.Name, Price = currentVariant.Price });
             }
             else
             {
-                enabledVariantOption.Add(new VariantOption { Enabled = false, OriginalPrice = 0, PlatformId = v.Id, PlatformName = v.Name, Price = 0 });
+                enabledVariantOption.Add(new VariantOption { Enabled = false, OriginalPrice = 0, PlatformId = p.Id, PlatformName = p.Name, Price = 0 });
             }
         }
 

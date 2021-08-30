@@ -21,7 +21,6 @@ else
             <h5 class="card-title">Editing - @product.Title</h5>
             <EditForm Model="@productEditModel" OnValidSubmit="@HandleValidSubmit">
                 <DataAnnotationsValidator />
-                <ValidationSummary />
 
                 <div class="form-group">
                     <label for="title">Title</label>
@@ -61,33 +60,11 @@ else
     [Parameter]
     public int Id { get; set; }
     private Product product = new Product();
-    private int currentPlatformId = 1;
     private ProductEditModel productEditModel;
 
     protected override async Task OnParametersSetAsync()
     {
-        await Reload();
-    }
-
-    private async Task HandleValidSubmit()
-    {
-        productEditModel.Variants = VariantService.GetSelectedVariants();
-        var response = await ProductService.EditProduct(productEditModel);
-        if (response.Success)
-        {
-            await Reload();
-            StateHasChanged();
-        }
-        NavigationManager.NavigateTo("/");
-    }
-
-    async Task Reload()
-    {
         product = await ProductService.GetProduct(Id);
-        if (product.Variants.Count > 0)
-        {
-            currentPlatformId = product.Variants[0].PlatformId; //If there is any platform for selected product, take first as current
-        }
 
         productEditModel = new ProductEditModel
         {
@@ -99,6 +76,16 @@ else
             Variants = product.Variants,
             Image = product.Image
         };
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        productEditModel.Variants = VariantService.GetSelectedVariants();
+        var response = await ProductService.EditProduct(productEditModel);
+        if (response.Success)
+        {
+            NavigationManager.NavigateTo($"/product/{Id}");
+        }
     }
 
     protected override void OnInitialized()

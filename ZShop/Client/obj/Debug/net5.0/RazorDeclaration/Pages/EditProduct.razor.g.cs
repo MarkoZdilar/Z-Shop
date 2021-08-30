@@ -196,38 +196,16 @@ using ZShop.Shared.ProductModels;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 60 "D:\Z-Shop\Z-Shop23\ZShop\Client\Pages\EditProduct.razor"
+#line 59 "D:\Z-Shop\Z-Shop23\ZShop\Client\Pages\EditProduct.razor"
        
     [Parameter]
     public int Id { get; set; }
     private Product product = new Product();
-    private int currentPlatformId = 1;
     private ProductEditModel productEditModel;
 
     protected override async Task OnParametersSetAsync()
     {
-        await Reload();
-    }
-
-    private async Task HandleValidSubmit()
-    {
-        productEditModel.Variants = VariantService.GetSelectedVariants();
-        var response = await ProductService.EditProduct(productEditModel);
-        if (response.Success)
-        {
-            await Reload();
-            StateHasChanged();
-        }
-        NavigationManager.NavigateTo("/");
-    }
-
-    async Task Reload()
-    {
         product = await ProductService.GetProduct(Id);
-        if (product.Variants.Count > 0)
-        {
-            currentPlatformId = product.Variants[0].PlatformId; //If there is any platform for selected product, take first as current
-        }
 
         productEditModel = new ProductEditModel
         {
@@ -239,6 +217,16 @@ using ZShop.Shared.ProductModels;
             Variants = product.Variants,
             Image = product.Image
         };
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        productEditModel.Variants = VariantService.GetSelectedVariants();
+        var response = await ProductService.EditProduct(productEditModel);
+        if (response.Success)
+        {
+            NavigationManager.NavigateTo($"/product/{Id}");
+        }
     }
 
     protected override void OnInitialized()

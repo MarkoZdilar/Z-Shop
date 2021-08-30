@@ -196,7 +196,7 @@ using ZShop.Shared.ProductModels;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 44 "D:\Z-Shop\Z-Shop23\ZShop\Client\Pages\Create.razor"
+#line 45 "D:\Z-Shop\Z-Shop23\ZShop\Client\Pages\Create.razor"
        
     private ProductAddModel newProduct = new ProductAddModel();
 

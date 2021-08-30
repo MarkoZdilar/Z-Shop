@@ -4,17 +4,21 @@
 
 <h3 class="variant-title">Variants</h3>
 
-@if (enabledVariantOption == null)
+@if (ProductVariants == null)
 {
     <p><em>Loading Variants</em></p>
 }
 else
 {
     <div class="variants-div">
-        @foreach (var v in enabledVariantOption)
+        @foreach (var vo in enabledVariantOption)
         {
             <div class="form-group">
-                <InputCheckbox @onclick="UpdateData" @bind-Value="v.Enabled" class="input-checkbox">Enabled</InputCheckbox> <span class="platform-name"><b>@v.PlatformName</b></span> <span class="price-span">Price: <InputNumber @onblur="UpdateData" @bind-Value="@v.Price"></InputNumber></span><span>Original Price: <InputNumber @onblur="UpdateData" @bind-Value="@v.OriginalPrice"></InputNumber></span>
+                <InputCheckbox @onclick="UpdateData" @bind-Value="vo.Enabled" class="input-checkbox">Enabled</InputCheckbox> 
+                <span class="platform-name"><b>@vo.PlatformName</b></span> 
+                <span class="price-span">Price: <InputNumber @onblur="UpdateData" @bind-Value="@vo.Price">
+                      </InputNumber></span><span>Original Price: <InputNumber @onblur="UpdateData" @bind-Value="@vo.OriginalPrice"></InputNumber>
+                </span>
             </div>
         }
     </div>
@@ -30,16 +34,16 @@ else
 
     protected override void OnInitialized()
     {
-        foreach(var v in platformService.Platforms)
+        foreach(var p in platformService.Platforms)
         {
-            var currentVariant = ProductVariants.FirstOrDefault(o => o.PlatformId == v.Id);
+            var currentVariant = ProductVariants.FirstOrDefault(o => o.PlatformId == p.Id);
             if (currentVariant != null)
             {
-                enabledVariantOption.Add(new VariantOption { Enabled = true, OriginalPrice = currentVariant.OriginalPrice, PlatformId = v.Id, PlatformName = v.Name, Price = currentVariant.Price });
+                enabledVariantOption.Add(new VariantOption { Enabled = true, OriginalPrice = currentVariant.OriginalPrice, PlatformId = p.Id, PlatformName = p.Name, Price = currentVariant.Price });
             }
             else
             {
-                enabledVariantOption.Add(new VariantOption { Enabled = false, OriginalPrice = 0, PlatformId = v.Id, PlatformName = v.Name, Price = 0 });
+                enabledVariantOption.Add(new VariantOption { Enabled = false, OriginalPrice = 0, PlatformId = p.Id, PlatformName = p.Name, Price = 0 });
             }
         }
 

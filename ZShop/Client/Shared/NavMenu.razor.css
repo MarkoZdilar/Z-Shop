@@ -8,7 +8,12 @@
 }
 
 .navbar-brand {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+}
+
+.navbar-brand :hover {
+    color: #d9d9d9;
+    transform: scale(1.07);
 }
 
 .oi {

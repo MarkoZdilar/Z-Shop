@@ -37,8 +37,8 @@ namespace ZShop.Server
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
-            services.AddDefaultIdentity<IdentityUser>()
-                .AddRoles<IdentityRole>()
+            services.AddDefaultIdentity<IdentityUser>() //Tells userManager to use IdentityUser type
+                .AddRoles<IdentityRole>() //Tells userManager to use IdentityRole 
                 .AddEntityFrameworkStores<DataContext>();
 
             services.AddControllersWithViews();
@@ -70,6 +70,11 @@ namespace ZShop.Server
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtSecurityKey"]))
                     };
                 });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

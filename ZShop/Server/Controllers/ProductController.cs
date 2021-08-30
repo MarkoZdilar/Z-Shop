@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace ZShop.Server.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly IProductService _productService; //Dep injection, we register this in Startup.cs
+        private readonly IProductService _productService;
 
         public ProductController(IProductService productService)
         {
@@ -44,13 +45,9 @@ namespace ZShop.Server.Controllers
             return Ok(await _productService.SearchProducts(searchText));
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateProduct(Product product)
-        {
-            return Ok(await _productService.CreateProduct(product));
-        }
 
         [HttpPost("Delete")]
+        [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> DeleteProduct([FromBody]DeleteProductRequest request)
         {
             var deletionResult = await _productService.DeleteProduct(request.Id);
@@ -59,19 +56,17 @@ namespace ZShop.Server.Controllers
         }
 
         [HttpPost("Edit")]
+        [Authorize(Policy = "AdminOnly")]
         public async Task<IActionResult> EditProduct([FromBody] ProductEditModel request)
         {
-            var editResult = await _productService.UpdateProduct(request); 
-
-            return Ok(new EditProductResponse { Success = editResult });
+            return Ok(await _productService.UpdateProduct(request));
         }
 
         [HttpPost("Add")]
-        public async Task<IActionResult> AddProduct([FromBody] ProductEditModel request)
+        [Authorize(Policy = "AdminOnly")]
+        public async Task<IActionResult> AddProduct([FromBody] ProductAddModel request)
         {
-            var addResult = await _productService.AddProduct(request);
-
-            return Ok(new AddProductResponse { Success = addResult.Success, Id = addResult.Id });
+            return Ok(await _productService.AddProduct(request));
         }
     }
 }

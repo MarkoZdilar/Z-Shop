@@ -29,6 +29,11 @@ namespace ZShop.Client.Services.CartService
 
         public async Task AddToCart(CartItem item)
         {
+            if(item.Quantity <= 0)
+            {
+                item.Quantity = 1;
+            }
+
             var cart = await _localStorage.GetItemAsync<List<CartItem>>("cart");
             if(cart == null)
             {

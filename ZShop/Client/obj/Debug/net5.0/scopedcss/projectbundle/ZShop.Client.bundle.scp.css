@@ -323,7 +323,12 @@ VariantOptions.razor
 }
 
 .navbar-brand[b-n4yjmrl9mx] {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+}
+
+.navbar-brand :hover[b-n4yjmrl9mx] {
+    color: #d9d9d9;
+    transform: scale(1.07);
 }
 
 .oi[b-n4yjmrl9mx] {

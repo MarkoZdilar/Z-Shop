@@ -182,7 +182,7 @@ using Microsoft.AspNetCore.Authorization;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 70 "D:\Z-Shop\Z-Shop23\ZShop\Client\Pages\Cart.razor"
+#line 71 "D:\Z-Shop\Z-Shop23\ZShop\Client\Pages\Cart.razor"
        
     List<CartItem> cartItems = new List<CartItem>();
     bool orderPlaced = false;

@@ -21,13 +21,6 @@ namespace ZShop.Server.Services.ProductService
             _context = context;
         }
 
-        public async Task<List<Product>> CreateProduct(Product product)
-        {
-            _context.Products.Add(product);
-            await _context.SaveChangesAsync();
-            return await _context.Products.Include(p => p.Variants).ToListAsync();
-        }
-
         public async Task<bool> DeleteProduct(int id)
         {
             var product = await _context
@@ -51,7 +44,7 @@ namespace ZShop.Server.Services.ProductService
 
         public async Task<List<Product>> GetAllProducts()
         {
-            return await _context.Products.Include(p => p.Variants).ToListAsync();
+            return await _context.Products.ToListAsync();
         }
 
         public async Task<Product> GetProduct(int id)
@@ -80,7 +73,7 @@ namespace ZShop.Server.Services.ProductService
                 .ToListAsync();
         }
 
-        public async Task<bool> UpdateProduct(ProductEditModel productEditModel)
+        public async Task<EditProductResponse> UpdateProduct(ProductEditModel productEditModel)
         {
             var product = await _context
                 .Products
@@ -88,7 +81,7 @@ namespace ZShop.Server.Services.ProductService
                 .FirstOrDefaultAsync(p => p.Id == productEditModel.Id);
 
             if (product == null)
-                return false;
+                return new EditProductResponse { Success = false };
 
             product.Title = productEditModel.Title;
             product.CategoryId = productEditModel.CategoryId;
@@ -106,12 +99,12 @@ namespace ZShop.Server.Services.ProductService
             }
             catch
             {
-                return false;
+                return new EditProductResponse { Success = false };
             }
-            return true;
+            return new EditProductResponse { Success = true };
         }
 
-        public async Task<AddProductResponse> AddProduct(ProductEditModel productEditModel)
+        public async Task<AddProductResponse> AddProduct(ProductAddModel productEditModel)
         {
             var product = new Product
             {
@@ -132,7 +125,7 @@ namespace ZShop.Server.Services.ProductService
             {
                 return new AddProductResponse { Success = false };
             }
-            return new AddProductResponse { Id = product.Id, Success = true };
+            return new AddProductResponse { Id = product.Id, Success = true }; //Id tek imamo nakon spremanja u bazu
         }
     }
 }
