@@ -26,6 +26,11 @@ Here is how it looks: <br>
   <img src="https://user-images.githubusercontent.com/58775766/131745964-1019d67e-14da-4132-9f3f-b11f73fa8c33.png" width="90%" >
 </p>
 
+If we just want to show games for the specific category, it can be done via dropdown:
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/58775766/131750338-c6d08dd8-09a8-49c8-a350-44d0db1738d6.png" width="90%" >
+</p>
+
 You can get a detailed preview for each product by clicking on it:
 <p align="center">
   <img src="https://user-images.githubusercontent.com/58775766/131746037-48c76092-a956-4414-b360-b2d53cbf0f8a.png" width="90%" >
