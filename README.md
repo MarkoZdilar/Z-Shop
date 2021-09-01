@@ -28,7 +28,7 @@ Here is how it looks: <br>
 
 If we just want to show games for the specific category, it can be done via dropdown:
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/58775766/131750338-c6d08dd8-09a8-49c8-a350-44d0db1738d6.png" width="90%" >
+  <img src="https://user-images.githubusercontent.com/58775766/131750503-440c957a-e840-4fd8-a3d4-fb8281709645.png" width="90%" >
 </p>
 
 You can get a detailed preview for each product by clicking on it:
