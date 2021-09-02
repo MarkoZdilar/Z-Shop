@@ -1,4 +1,4 @@
-# Z-shop  - Blazor WebAssembly app #
+# Z-Shop  - Blazor WebAssembly app #
 
 _Simple web application built with blazor WebAssembly. Entity Framework and code first approach is used here._
 <br>
